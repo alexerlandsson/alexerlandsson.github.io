@@ -8,7 +8,7 @@ var fs = require('fs');
 var paths = {
   sass: {
     src: './src/style/default.scss',
-    dest: './docs/alexerlandsson/style',
+    dest: './docs/style',
     watch: './src/style/**/*.scss'
   },
   html: {
@@ -17,7 +17,7 @@ var paths = {
   },
   images: {
     src: './src/images/**/*',
-    dest: './docs/alexerlandsson/images'
+    dest: './docs/images'
   }
 };
 
