@@ -20,6 +20,7 @@
 
 .page-section-main-row {
   color: var(--c-text-light);
+  text-align: center;
 
   & + .page-section-main-row {
     margin-top: var(--gutter);
