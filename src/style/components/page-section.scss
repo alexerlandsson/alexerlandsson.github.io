@@ -1,0 +1,42 @@
+.page-section {
+  padding: calc(var(--gutter) * 5);
+
+  & + .page-section {
+    padding-top: 0;
+  }
+
+  &.page-section-main {
+    @include flex-display;
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(center);
+    min-height: 80vh;
+  }
+}
+
+.page-section-main-row {
+  color: var(--c-text-light);
+
+  & + .page-section-main-row {
+    margin-top: var(--gutter);
+  }
+}
+
+.page-section-content {
+  max-width: 500px;
+
+  > * {
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  p {
+    margin-top: var(--gutter);
+    margin-bottom: var(--gutter);
+  }
+}

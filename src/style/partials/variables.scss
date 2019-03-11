@@ -1,0 +1,18 @@
+// Colors
+$c-bg: #fff;
+$c-text: #000;
+$c-text-light: #ccc;
+$c-selection-bg: #0000ff;
+$c-selection-text: #fff;
+
+// Gutter
+$gutter: 10px;
+
+:root {
+  --c-bg: #{$c-bg};
+  --c-text: #{$c-text};
+  --c-text-light: #{$c-text-light};
+  --c-selection-bg: #{$c-selection-bg};
+  --c-selection-text: #{$c-selection-text};
+  --gutter: #{$gutter};
+}

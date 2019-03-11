@@ -1,0 +1,15 @@
+.link-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.link-item {
+  & + .link-item {
+    margin-top: calc(var(--gutter) * 0.5);
+  }
+}
+
+.link-action {
+  display: block;
+}

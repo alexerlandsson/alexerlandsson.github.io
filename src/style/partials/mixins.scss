@@ -1,0 +1,75 @@
+@mixin flex-display {
+  // sass-lint:disable-block no-duplicate-properties
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@mixin --flex-direction-prefixes($direction) {
+  @if $direction == row {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+  } @else if $direction == row-reverse {
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: horizontal;
+  } @else if $direction == column {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+  } @else if $direction == column-reverse {
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: vertical;
+  } @else {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: $direction;
+  }
+}
+
+@mixin flex-direction($direction: row) {
+  @include --flex-direction-prefixes($direction);
+  -ms-flex-direction: $direction;
+  flex-direction: $direction;
+}
+
+@mixin --justify-content-prefixes($justify) {
+  @if $justify == center {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+  } @else if $justify == flex-start {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+  } @else if $justify == flex-end {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+  } @else if $justify == space-between {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+  } @else if $justify == space-around {
+    -ms-flex-pack: distribute;
+  } @else {
+    -webkit-box-pack: $justify;
+    -ms-flex-pack: $justify;
+  }
+}
+
+@mixin justify-content($justify: flex-start) {
+  @include --justify-content-prefixes($justify);
+  justify-content: $justify;
+}
+
+@mixin --flex-align-items-prefixes($align) {
+  @if $align == flex-start {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+  } @else if $align == flex-end {
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+  } @else {
+    -webkit-box-align: $align;
+    -ms-flex-align: $align;
+  }
+}
+
+@mixin align-items($align: stretch) {
+  @include --flex-align-items-prefixes($align);
+  align-items: $align;
+}

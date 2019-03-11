@@ -1,0 +1,25 @@
+h1,
+h2 {
+	font: inherit;
+  font-size: 1rem;
+  margin: 0;
+  text-transform: lowercase;
+}
+
+h1 {
+	word-spacing: -1ch;
+
+  &:before {
+  	content: '@';
+  }
+}
+
+h2 {
+	color: var(--c-text-light);
+	margin-top: 0;
+	margin-bottom: var(--gutter);
+
+  &:before {
+    content: '#';
+  }
+}
