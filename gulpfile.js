@@ -47,7 +47,7 @@ gulp.task('html', function() {
     .src(paths.html.src)
     .pipe(replace(/<link href="([^\.]+\.css)"[^>]*>/g, function(s) {
       var style = fs.readFileSync(paths.sass.dest + '/default.min.css', 'utf8');
-      return '<style>\n' + style + '\n</style>';
+      return '<style>' + style + '</style>';
     }))
     .pipe(gulp.dest(paths.html.dest));
 });
