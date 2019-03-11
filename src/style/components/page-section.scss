@@ -1,6 +1,10 @@
 .page-section {
   padding: calc(var(--gutter) * 5);
 
+  @media (max-width: $breakpoint) {
+    padding: calc(var(--gutter) * 5) calc(var(--gutter) * 2);
+  }
+
   & + .page-section {
     padding-top: 0;
   }
