@@ -8,16 +8,16 @@ var fs = require('fs');
 var paths = {
   sass: {
     src: './src/style/default.scss',
-    dest: './dist/alexerlandsson/style',
+    dest: './docs/alexerlandsson/style',
     watch: './src/style/**/*.scss'
   },
   html: {
     src: './src/index.html',
-    dest: './dist'
+    dest: './docs'
   },
   images: {
     src: './src/images/**/*',
-    dest: './dist/alexerlandsson/images'
+    dest: './docs/alexerlandsson/images'
   }
 };
 
