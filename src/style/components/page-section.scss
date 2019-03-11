@@ -2,7 +2,7 @@
   padding: calc(var(--gutter) * 5);
 
   @media (max-width: $breakpoint) {
-    padding: calc(var(--gutter) * 5) calc(var(--gutter) * 2);
+    padding: calc(var(--gutter) * 5) calc(var(--gutter) * 3);
   }
 
   & + .page-section {
