@@ -8,7 +8,7 @@ var fs = require('fs');
 var paths = {
   sass: {
     src: './src/style/default.scss',
-    dest: './docs/style',
+    dest: './dist/style',
     watch: './src/style/**/*.scss'
   },
   html: {
