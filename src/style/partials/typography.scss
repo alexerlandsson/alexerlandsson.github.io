@@ -23,3 +23,8 @@ h2 {
     content: '#';
   }
 }
+
+p {
+	margin-top: var(--gutter);
+	margin-bottom: var(--gutter);
+}
