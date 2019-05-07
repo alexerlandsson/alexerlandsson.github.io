@@ -25,7 +25,6 @@ var paths = {
 
 var htmlBeatufyOptions = {
   'indentSize': 2,
-  'indent_with_tabs': true,
   'max-preserve-newlines': 1,
   'content_unformatted': [
     'pre',
