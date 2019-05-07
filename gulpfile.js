@@ -24,8 +24,8 @@ var paths = {
 };
 
 var htmlBeatufyOptions = {
-  'indentSize': 2,
-  'max-preserve-newlines': 1,
+  'indent_size': 2,
+  'max_preserve_newlines': 1,
   'content_unformatted': [
     'pre',
     'script',
