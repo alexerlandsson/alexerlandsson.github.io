@@ -4,6 +4,8 @@ var rename = require('gulp-rename');
 var minifycss = require('gulp-clean-css');
 var replace = require('gulp-replace');
 var fs = require('fs');
+var fileinclude = require('gulp-file-include');
+var htmlbeautify = require('gulp-html-beautify');
 
 var paths = {
   sass: {
@@ -19,6 +21,18 @@ var paths = {
     src: './src/images/**/*',
     dest: './docs/images'
   }
+};
+
+var htmlBeatufyOptions = {
+  'indentSize': 2,
+  'indent_with_tabs': true,
+  'max-preserve-newlines': 1,
+  'content_unformatted': [
+    'pre',
+    'script',
+    'style'
+  ],
+  'extra_liners' : []
 };
 
 // CSS
@@ -37,10 +51,15 @@ gulp.task('sass', function() {
 gulp.task('html', function() {
   return gulp
     .src(paths.html.src)
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
     .pipe(replace(/<link href="([^\.]+\.css)"[^>]*>/g, function(s) {
       var style = fs.readFileSync(paths.sass.dest + '/default.min.css', 'utf8');
       return '<style>' + style + '</style>';
     }))
+    .pipe(htmlbeautify(htmlBeatufyOptions))
     .pipe(gulp.dest(paths.html.dest));
 });
 
