@@ -15,7 +15,7 @@ h1 {
 }
 
 h2 {
-	color: var(--c-text-light);
+	color: var(--c-text-alt);
 	margin-top: 0;
 	margin-bottom: var(--gutter);
 
@@ -27,4 +27,11 @@ h2 {
 p {
 	margin-top: var(--gutter);
 	margin-bottom: var(--gutter);
+}
+
+a {
+	&,
+	&:visited {
+		color: var(--c-link);
+	}
 }
