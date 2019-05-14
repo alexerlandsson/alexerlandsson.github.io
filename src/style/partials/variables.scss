@@ -1,15 +1,16 @@
-// Colors
-
+// Theme: Light (default)
 $c-light-bg: #fff;
 $c-light-text: #333;
 $c-light-text-alt: #ccc;
 $c-light-link: #0000ee;
 
+// Theme: Dark
 $c-dark-bg: #111;
 $c-dark-text: #fff;
 $c-dark-text-alt: #808080;
 $c-dark-link: #0086da;
 
+// Colors
 $c-selection-bg: #0000ff;
 $c-selection-text: #fff;
 
@@ -20,18 +21,18 @@ $gutter: 10px;
 $breakpoint: 500px;
 
 :root {
-  --c-bg: #{$c-dark-bg};
-  --c-text: #{$c-dark-text};
-  --c-text-alt: #{$c-dark-text-alt};
-  --c-link: #{$c-dark-link};
+  --c-bg: #{$c-light-bg};
+  --c-text: #{$c-light-text};
+  --c-text-alt: #{$c-light-text-alt};
+  --c-link: #{$c-light-link};
   --c-selection-bg: #{$c-selection-bg};
   --c-selection-text: #{$c-selection-text};
   --gutter: #{$gutter};
 
-  @media (prefers-color-scheme: light) {
-    --c-bg: #{$c-light-bg};
-    --c-text: #{$c-light-text};
-    --c-text-alt: #{$c-light-text-alt};
-    --c-link: #{$c-light-link};
+  @media (prefers-color-scheme: dark) {
+    --c-bg: #{$c-dark-bg};
+    --c-text: #{$c-dark-text};
+    --c-text-alt: #{$c-dark-text-alt};
+    --c-link: #{$c-dark-link};
   }
 }
