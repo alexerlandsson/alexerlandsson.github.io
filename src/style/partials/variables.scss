@@ -10,9 +10,16 @@ $c-dark-text: #fff;
 $c-dark-text-alt: #808080;
 $c-dark-link: #0086da;
 
-// Colors
+// Selection
 $c-selection-bg: #0000ff;
 $c-selection-text: #fff;
+
+// Avatar
+$c-avatar-bg: #fff;
+$c-avatar-shirt: #000;
+$c-avatar-neck: #bea37c;
+$c-avatar-head: #cfb899;
+$c-avatar-hair: #3a3022;
 
 // Gutter
 $gutter: 10px;
@@ -27,6 +34,11 @@ $breakpoint: 500px;
   --c-link: #{$c-light-link};
   --c-selection-bg: #{$c-selection-bg};
   --c-selection-text: #{$c-selection-text};
+  --c-avatar-bg: #{$c-avatar-bg};
+  --c-avatar-shirt: #{$c-avatar-shirt};
+  --c-avatar-neck: #{$c-avatar-neck};
+  --c-avatar-head: #{$c-avatar-head};
+  --c-avatar-hair: #{$c-avatar-hair};
   --gutter: #{$gutter};
 
   @media (prefers-color-scheme: dark) {

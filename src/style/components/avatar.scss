@@ -1,5 +1,24 @@
 .avatar {
   display: block;
-  width: calc(var(--gutter) * 3.5);
   border-radius: 50%;
+}
+
+.avatar-bg {
+  fill: var(--c-avatar-bg);
+}
+
+.avatar-shirt {
+  fill: var(--c-avatar-shirt);
+}
+
+.avatar-neck {
+  fill: var(--c-avatar-neck);
+}
+
+.avatar-head {
+  fill: var(--c-avatar-head);
+}
+
+.avatar-hair {
+  fill: var(--c-avatar-hair);
 }
