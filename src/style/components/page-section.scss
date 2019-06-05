@@ -16,6 +16,11 @@
   @include justify-content(center);
   min-height: 80vh;
 
+  .page-section-main-content {
+    position: sticky;
+    top: calc(var(--gutter) * 5);
+  }
+
   p {
     margin-top: 0;
     margin-bottom: 0;
