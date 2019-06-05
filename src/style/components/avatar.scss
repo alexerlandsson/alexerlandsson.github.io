@@ -1,5 +1,5 @@
 .avatar {
   display: block;
-  width: ($gutter * 3.5);
+  width: calc(var(--gutter) * 3.5);
   border-radius: 50%;
 }
