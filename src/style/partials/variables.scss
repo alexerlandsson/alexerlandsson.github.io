@@ -3,19 +3,20 @@ $c-light-bg: #fff;
 $c-light-text: #333;
 $c-light-text-alt: #ccc;
 $c-light-link: #0000ee;
+$c-light-avatar-bg: #eaeaea;
 
 // Theme: Dark
 $c-dark-bg: #111;
 $c-dark-text: #fff;
 $c-dark-text-alt: #808080;
 $c-dark-link: #0086da;
+$c-dark-avatar-bg: #404341;
 
 // Selection
 $c-selection-bg: #0000ff;
 $c-selection-text: #fff;
 
 // Avatar
-$c-avatar-bg: #fff;
 $c-avatar-shirt: #000;
 $c-avatar-neck: #bea37c;
 $c-avatar-head: #cfb899;
@@ -34,7 +35,7 @@ $breakpoint: 500px;
   --c-link: #{$c-light-link};
   --c-selection-bg: #{$c-selection-bg};
   --c-selection-text: #{$c-selection-text};
-  --c-avatar-bg: #{$c-avatar-bg};
+  --c-avatar-bg: #{$c-light-avatar-bg};
   --c-avatar-shirt: #{$c-avatar-shirt};
   --c-avatar-neck: #{$c-avatar-neck};
   --c-avatar-head: #{$c-avatar-head};
@@ -46,5 +47,6 @@ $breakpoint: 500px;
     --c-text: #{$c-dark-text};
     --c-text-alt: #{$c-dark-text-alt};
     --c-link: #{$c-dark-link};
+    --c-avatar-bg: #{$c-dark-avatar-bg};
   }
 }
