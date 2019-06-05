@@ -17,7 +17,7 @@
   min-height: 80vh;
 
   .page-section-main-content {
-    position: sticky;
+    @include position-sticky;
     top: calc(var(--gutter) * 5);
   }
 

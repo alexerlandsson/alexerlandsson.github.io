@@ -73,3 +73,9 @@
   @include --flex-align-items-prefixes($align);
   align-items: $align;
 }
+
+@mixin position-sticky {
+  // sass-lint:disable-block no-duplicate-properties
+  position: -webkit-sticky;
+  position: sticky;
+}
