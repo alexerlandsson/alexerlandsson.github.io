@@ -1,10 +1,7 @@
 .avatar {
   display: block;
   border-radius: 50%;
-}
-
-.avatar-bg {
-  fill: var(--c-avatar-bg);
+  background-color: var(--c-avatar-bg);
 }
 
 .avatar-shirt {
