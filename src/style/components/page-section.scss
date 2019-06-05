@@ -13,14 +13,13 @@
 .page-section-main {
   @include flex-display;
   @include flex-direction(column);
-  @include align-items(center);
   @include justify-content(center);
   min-height: 80vh;
-  color: var(--c-text-alt);
-  text-align: center;
 
   p {
+    margin-top: 0;
     margin-bottom: 0;
+    color: var(--c-text-alt);
   }
 }
 
