@@ -17,6 +17,10 @@ var paths = {
     src: './src/index.html',
     dest: './docs'
   },
+  amp: {
+    src: './src/amp.html',
+    dest: './docs/amp'
+  },
   images: {
     src: './src/images/**/*',
     dest: './docs/images'
@@ -62,6 +66,24 @@ gulp.task('html', function() {
     .pipe(gulp.dest(paths.html.dest));
 });
 
+// AMP
+
+gulp.task('amp', function() {
+  return gulp
+    .src(paths.amp.src)
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
+    .pipe(replace(/<link href="([^\.]+\.css)"[^>]*>/g, function(s) {
+      var style = fs.readFileSync(paths.sass.dest + '/default.min.css', 'utf8');
+      return '<style amp-custom>' + style + '</style>';
+    }))
+    .pipe(htmlbeautify(htmlBeatufyOptions))
+    .pipe(rename({basename: 'index'}))
+    .pipe(gulp.dest(paths.amp.dest));
+});
+
 // Images
 
 gulp.task('images', function() {
@@ -79,4 +101,4 @@ gulp.task('watch', function() {
 
 // Default
 
-gulp.task('default', gulp.series('sass', 'html', 'images'));
+gulp.task('default', gulp.series('sass', 'html', 'amp', 'images'));
