@@ -4,8 +4,8 @@
   padding: 0;
 }
 
-.link-item {
-  & + .link-item {
+.link-list__item {
+  & + .link-list__item {
     margin-top: calc(var(--gutter) * 0.5);
   }
 }

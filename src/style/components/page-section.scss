@@ -10,15 +10,16 @@
   }
 }
 
-.page-section-main {
+.page-section--main {
   @include flex-display;
   @include flex-direction(column);
   @include justify-content(center);
   min-height: 80vh;
 
-  .page-section-main-content {
+  .page-section__content {
     @include position-sticky;
     top: calc(var(--gutter) * 5);
+    max-width: none;
   }
 
   p {
@@ -28,7 +29,7 @@
   }
 }
 
-.page-section-content {
+.page-section__content {
   max-width: 500px;
 
   > * {
