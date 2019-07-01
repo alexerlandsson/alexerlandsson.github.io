@@ -32,6 +32,7 @@ var htmlBeatufyOptions = {
   'max_preserve_newlines': 1,
   'content_unformatted': [
     'pre',
+    'noscript',
     'script',
     'style'
   ],
