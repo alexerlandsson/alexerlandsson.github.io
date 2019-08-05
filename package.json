@@ -7,9 +7,9 @@
   "devDependencies": {
     "fs": "0.0.1-security",
     "gulp": "^4.0.0",
+    "gulp-beautify": "^3.0.0",
     "gulp-clean-css": "^4.0.0",
     "gulp-file-include": "^2.0.1",
-    "gulp-html-beautify": "^1.0.1",
     "gulp-rename": "^1.4.0",
     "gulp-replace": "^1.0.0",
     "gulp-sass": "^4.0.2"

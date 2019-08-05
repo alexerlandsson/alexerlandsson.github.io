@@ -1,5 +1,13 @@
+// Default
+
+// This is the mail SCSS file compiled into CSS.
+// All components and partials are included here.
+// Partials should be included in the specific order below while
+// components should be included in alphabetical order.
+
 // Partials
 @import
+'partials/functions',
 'partials/variables',
 'partials/mixins',
 'partials/reset',

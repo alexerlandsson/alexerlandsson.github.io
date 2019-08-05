@@ -5,7 +5,7 @@ var minifycss = require('gulp-clean-css');
 var replace = require('gulp-replace');
 var fs = require('fs');
 var fileinclude = require('gulp-file-include');
-var htmlbeautify = require('gulp-html-beautify');
+var beautify = require('gulp-beautify');
 
 var paths = {
   sass: {
@@ -27,7 +27,7 @@ var paths = {
   }
 };
 
-var htmlBeatufyOptions = {
+var beatufyOptions = {
   'indent_size': 2,
   'max_preserve_newlines': 1,
   'content_unformatted': [
@@ -63,7 +63,7 @@ gulp.task('html', function() {
       var style = fs.readFileSync(paths.sass.dest + '/default.min.css', 'utf8');
       return '<style>' + style + '</style>';
     }))
-    .pipe(htmlbeautify(htmlBeatufyOptions))
+    .pipe(beautify.html(beatufyOptions))
     .pipe(gulp.dest(paths.html.dest));
 });
 
@@ -80,7 +80,7 @@ gulp.task('amp', function() {
       var style = fs.readFileSync(paths.sass.dest + '/default.min.css', 'utf8');
       return '<style amp-custom>' + style + '</style>';
     }))
-    .pipe(htmlbeautify(htmlBeatufyOptions))
+    .pipe(beautify.html(beatufyOptions))
     .pipe(rename({basename: 'index'}))
     .pipe(gulp.dest(paths.amp.dest));
 });

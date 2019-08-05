@@ -1,0 +1,13 @@
+// Functions
+
+// All SCSS functions used in this project should be listed
+// in this file.
+
+// Fetch deeply nested values from a map
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+
+  @return $map;
+}

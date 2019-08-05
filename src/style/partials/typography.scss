@@ -1,3 +1,9 @@
+// Typography
+
+// Styling for typographical elements should be declared in this file.
+// All selectors should target elements directly and be general to all
+// of the specific elements used in this project.
+
 h1,
 h2 {
 	font: inherit;
@@ -32,6 +38,10 @@ p {
 a {
 	&,
 	&:visited {
-		color: var(--c-link);
+		color: var(--c-text);
+	}
+
+	&:hover {
+		color: var(--c-text-alt); // TODO: How to handle on touch devices?
 	}
 }

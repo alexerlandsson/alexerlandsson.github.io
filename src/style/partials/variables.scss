@@ -1,26 +1,36 @@
-// Theme: Light (default)
-$c-light-bg: #fff;
-$c-light-text: #333;
-$c-light-text-alt: #757575;
-$c-light-link: #0000ee;
-$c-light-avatar-bg: #eaeaea;
+// Variables
 
-// Theme: Dark
-$c-dark-bg: #111;
-$c-dark-text: #fff;
-$c-dark-text-alt: #808080;
-$c-dark-link: #0086da;
-$c-dark-avatar-bg: #404341;
+// This file contains variables for global settings.
+// SCSS variables is used to declare the values and then
+// used as CSS variables in this project.
 
-// Selection
-$c-selection-bg: #0000ff;
-$c-selection-text: #fff;
+// Map containing theme colors
+$color-theme: (
+  light: (
+    bg: #fff,
+    text: #333,
+    text-alt: #757575
+  ),
+  dark: (
+    bg: #111,
+    text: #fff,
+    text-alt: #808080
+  )
+);
 
-// Avatar
-$c-avatar-shirt: #000;
-$c-avatar-neck: #bea37c;
-$c-avatar-head: #cfb899;
-$c-avatar-hair: #3a3022;
+// Map containing colors for text selection
+$color-selection: (
+  bg: #0000ff,
+  text: #fff
+);
+
+// Map containing colors for avatar
+$color-avatar: (
+  shirt: #000,
+  neck: #bea37c,
+  head: #cfb899,
+  hair: #3a3022
+);
 
 // Gutter
 $gutter: 10px;
@@ -28,25 +38,22 @@ $gutter: 10px;
 // Breakpoint
 $breakpoint: 500px;
 
+// CSS variables
 :root {
-  --c-bg: #{$c-light-bg};
-  --c-text: #{$c-light-text};
-  --c-text-alt: #{$c-light-text-alt};
-  --c-link: #{$c-light-link};
-  --c-selection-bg: #{$c-selection-bg};
-  --c-selection-text: #{$c-selection-text};
-  --c-avatar-bg: #{$c-light-avatar-bg};
-  --c-avatar-shirt: #{$c-avatar-shirt};
-  --c-avatar-neck: #{$c-avatar-neck};
-  --c-avatar-head: #{$c-avatar-head};
-  --c-avatar-hair: #{$c-avatar-hair};
+  --c-bg: #{map-deep-get($color-theme, light, bg)};
+  --c-text: #{map-deep-get($color-theme, light, text)};
+  --c-text-alt: #{map-deep-get($color-theme, light, text-alt)};
+  --c-selection-bg: #{map-get($color-selection, bg)};
+  --c-selection-text: #{map-get($color-selection, text)};
+  --c-avatar-shirt: #{map-get($color-avatar, shirt)};
+  --c-avatar-neck: #{map-get($color-avatar, neck)};
+  --c-avatar-head: #{map-get($color-avatar, head)};
+  --c-avatar-hair: #{map-get($color-avatar, hair)};
   --gutter: #{$gutter};
 
   @media (prefers-color-scheme: dark) {
-    --c-bg: #{$c-dark-bg};
-    --c-text: #{$c-dark-text};
-    --c-text-alt: #{$c-dark-text-alt};
-    --c-link: #{$c-dark-link};
-    --c-avatar-bg: #{$c-dark-avatar-bg};
+    --c-bg: #{map-deep-get($color-theme, dark, bg)};
+    --c-text: #{map-deep-get($color-theme, dark, text)};
+    --c-text-alt: #{map-deep-get($color-theme, dark, text-alt)};
   }
 }

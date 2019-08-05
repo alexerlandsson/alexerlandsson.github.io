@@ -1,7 +1,11 @@
+// Avatar
+
+// SCSS used to style the appearance of the avatar component.
+
 .avatar {
   display: block;
   border-radius: 50%;
-  background-color: var(--c-avatar-bg);
+  background-color: var(--c-text-alt);
 }
 
 .avatar__shirt {
