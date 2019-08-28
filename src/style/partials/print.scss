@@ -1,0 +1,36 @@
+// Print
+
+// Specific styling for print.
+
+@media print {
+  * {
+    color: #000 !important;
+  }
+
+  body {
+    background-color: #fff;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .page-section {
+    padding: 0 !important;
+    margin-top: 1cm;
+  }
+
+  .page-section--main {
+    min-height: 0 !important;
+  }
+
+  a {
+    text-decoration: none;
+
+    // Print URL to links
+    &:after {
+      content: '('attr(href)')';
+      margin-left: 0.5ch;
+    }
+  }
+}
