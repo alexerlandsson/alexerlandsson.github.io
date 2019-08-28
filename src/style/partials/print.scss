@@ -5,6 +5,7 @@
 @media print {
   * {
     color: #000 !important;
+    font-size: 10pt !important;
   }
 
   body {
@@ -22,6 +23,10 @@
 
   .page-section--main {
     min-height: 0 !important;
+  }
+
+  .page-section__content {
+    max-width: none !important;
   }
 
   a {
