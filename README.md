@@ -42,9 +42,13 @@ Everything other than the AMP specific parts should be the same as `src/index.ht
 
 ### CSS
 
-The CSS is built using SCSS and can be found in `src/style`. The SCSS in compiled into CSS using `gulp-sass` and later included as minified CSS placed inline in the document head.
+The CSS is built using SCSS and can be found in `src/style`. The SCSS in compiled into CSS using `gulp-sass` and later included as minified CSS placed inline in the document head. This results in no additional request for CSS and therefore a faster load speed.
 
-This results in no additional request for CSS and therefore a faster load speed.
+All SCSS written should be following the lint rules. The rules can be found in `.sass-lint.yml`. To run the lint, use the following command.
+
+```shell
+$ npm run sass-lint
+```
 
 ### Images
 
