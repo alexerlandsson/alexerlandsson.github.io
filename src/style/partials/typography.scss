@@ -6,24 +6,24 @@
 
 h1,
 h2 {
-	font: inherit;
+  font: inherit;
   font-size: 1rem;
   margin: 0;
   text-transform: lowercase;
 }
 
 h1 {
-	word-spacing: -1ch;
+  word-spacing: -1ch;
 
   &:before {
-  	content: '@';
+    content: '@';
   }
 }
 
 h2 {
-	color: var(--c-text-alt);
-	margin-top: 0;
-	margin-bottom: var(--gutter);
+  color: var(--c-text-alt);
+  margin-top: 0;
+  margin-bottom: var(--gutter);
 
   &:before {
     content: '#';
@@ -31,17 +31,17 @@ h2 {
 }
 
 p {
-	margin-top: var(--gutter);
-	margin-bottom: var(--gutter);
+  margin-top: var(--gutter);
+  margin-bottom: var(--gutter);
 }
 
 a {
-	&,
-	&:visited {
-		color: var(--c-text);
-	}
+  &,
+  &:visited {
+    color: var(--c-text);
+  }
 
-	&:hover {
-		color: var(--c-text-alt); // TODO: How to handle on touch devices?
-	}
+  &:hover {
+    color: var(--c-text-alt); // TODO: How to handle on touch devices?
+  }
 }
