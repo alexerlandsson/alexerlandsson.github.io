@@ -1,6 +1,7 @@
-// Default SCSS
+// AMP SCSS
 
-// This is the main SCSS file compiled into CSS.
+// This is the main SCSS file compiled into CSS used on the AMP page.
+// The AMP version is a smaller version of the default.
 // All components and partials are included here.
 // Partials should be included in the specific order below while
 // components should be included in alphabetical order.
@@ -12,8 +13,7 @@
 'partials/mixins',
 'partials/reset',
 'partials/base',
-'partials/typography',
-'partials/print'
+'partials/typography'
 ;
 
 // Components

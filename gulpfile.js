@@ -9,7 +9,7 @@ var beautify = require('gulp-beautify');
 
 var paths = {
   sass: {
-    src: './src/style/default.scss',
+    src: './src/style/*.scss',
     dest: './dist/style',
     watch: './src/style/**/*.scss'
   },
@@ -56,8 +56,7 @@ gulp.task('html', function() {
   return gulp
     .src(paths.html.src)
     .pipe(fileinclude({
-      prefix: '@@',
-      basepath: '@file'
+      prefix: '@@'
     }))
     .pipe(replace(/<link href="([^\.]+\.css)"[^>]*>/g, function(s) {
       var style = fs.readFileSync(paths.sass.dest + '/default.min.css', 'utf8');
@@ -73,11 +72,10 @@ gulp.task('amp', function() {
   return gulp
     .src(paths.amp.src)
     .pipe(fileinclude({
-      prefix: '@@',
-      basepath: '@file'
+      prefix: '@@'
     }))
     .pipe(replace(/<link href="([^\.]+\.css)"[^>]*>/g, function(s) {
-      var style = fs.readFileSync(paths.sass.dest + '/default.min.css', 'utf8');
+      var style = fs.readFileSync(paths.sass.dest + '/amp.min.css', 'utf8');
       return '<style amp-custom>' + style + '</style>';
     }))
     .pipe(beautify.html(beatufyOptions))
