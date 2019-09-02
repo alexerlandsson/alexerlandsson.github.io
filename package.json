@@ -16,7 +16,7 @@
     "sass-lint": "^1.13.1"
   },
   "scripts": {
-    "precommit-msg": "echo 'Pre-commit checks...' && exit 0",
+    "precommit-msg": "echo 'Pre-commit checks...\nDo not forget to run gulp if you have edited files to be built!' && exit 0",
     "sass-lint": "sass-lint -v -q"
   },
   "pre-commit": [
