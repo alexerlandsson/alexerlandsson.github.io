@@ -24,6 +24,12 @@ $color-selection: (
   text: #fff
 );
 
+// Map containing colors for print
+$color-print: (
+  bg: #fff,
+  text: #000
+);
+
 // Map containing colors for avatar
 $color-avatar: (
   shirt: #000,

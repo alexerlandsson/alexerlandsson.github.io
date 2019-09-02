@@ -3,16 +3,15 @@
 // Specific styling for print.
 
 @media print {
-  $print-bg: #fff;
-  $print-color: #000;
+  // sass-lint:disable-block no-important
 
   * {
-    color: $print-color !important;
+    color: #{map-get($color-print, text)} !important;
     font-size: 10pt !important;
   }
 
   body {
-    background-color: $print-bg;
+    background-color: #{map-get($color-print, bg)};
   }
 
   .no-print {
