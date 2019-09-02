@@ -5,7 +5,6 @@
   "main": "gulpfile.js",
   "dependencies": {},
   "devDependencies": {
-    "fs": "0.0.1-security",
     "gulp": "^4.0.0",
     "gulp-beautify": "^3.0.0",
     "gulp-clean-css": "^4.0.0",
@@ -29,5 +28,5 @@
     "url": "git@github.com:alexerlandsson/alex-erlandsson.git"
   },
   "author": "",
-  "license": "ISC"
+  "license": "MIT"
 }
