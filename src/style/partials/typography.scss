@@ -23,7 +23,7 @@ h1 {
 h2 {
   color: var(--c-text-alt);
   margin-top: 0;
-  margin-bottom: var(--gutter);
+  margin-bottom: gutter(1);
 
   &:before {
     content: '#';
@@ -31,8 +31,8 @@ h2 {
 }
 
 p {
-  margin-top: var(--gutter);
-  margin-bottom: var(--gutter);
+  margin-top: gutter(1);
+  margin-bottom: gutter(1);
 }
 
 a {

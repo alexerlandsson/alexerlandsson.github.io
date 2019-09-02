@@ -4,10 +4,10 @@
 // blocks used in this project.
 
 .page-section {
-  padding: calc(var(--gutter) * 5);
+  padding: gutter(5);
 
   @media (max-width: $breakpoint) {
-    padding: calc(var(--gutter) * 5) calc(var(--gutter) * 3);
+    padding: gutter(5) gutter(3);
   }
 
   & + .page-section {
@@ -23,7 +23,7 @@
 
   .page-section__content {
     @include position-sticky;
-    top: calc(var(--gutter) * 5);
+    top: gutter(5);
     max-width: none;
   }
 

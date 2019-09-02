@@ -3,6 +3,11 @@
 // All SCSS functions used in this project should be listed
 // in this file.
 
+// Calculate gutter from a given multiplier
+@function gutter($multiplier: 1) {
+  @return ($gutter * $multiplier);
+}
+
 // Fetch deeply nested values from a map
 @function map-deep-get($map, $keys...) {
   @each $key in $keys {

@@ -10,6 +10,6 @@
 
 .link-list__item {
   & + .link-list__item {
-    margin-top: calc(var(--gutter) * 0.5);
+    margin-top: gutter(0.5);
   }
 }
