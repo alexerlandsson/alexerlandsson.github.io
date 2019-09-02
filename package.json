@@ -13,12 +13,16 @@
     "gulp-rename": "^1.4.0",
     "gulp-replace": "^1.0.0",
     "gulp-sass": "^4.0.2",
+    "pre-commit": "^1.2.2",
     "sass-lint": "^1.13.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass-lint": "sass-lint -v -q"
   },
+  "pre-commit": [
+    "sass-lint"
+  ],
   "repository": {
     "type": "git",
     "url": "git@github.com:alexerlandsson/alex-erlandsson.git"
