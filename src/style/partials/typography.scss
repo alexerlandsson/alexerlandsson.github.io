@@ -41,7 +41,10 @@ a {
     color: var(--c-text);
   }
 
-  &:hover {
-    color: var(--c-text-alt); // TODO: How to handle on touch devices?
+  // Hover on pointing device units only
+  @media(hover: hover) and (pointer: fine) {
+    &:hover {
+      color: var(--c-text-alt);
+    }
   }
 }
