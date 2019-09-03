@@ -19,7 +19,7 @@
   @include flex-display;
   @include flex-direction(column);
   @include justify-content(center);
-  min-height: 80vh;
+  min-height: 70vh;
 
   .page-section__content {
     @include position-sticky;
