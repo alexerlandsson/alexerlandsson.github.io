@@ -3,9 +3,9 @@
 // SCSS used to style the appearance of the avatar component.
 
 .avatar {
+  @include var(background-color, text-alt);
   display: block;
   border-radius: 50%;
-  background-color: var(--c-text-alt);
 }
 
 .avatar__shirt {

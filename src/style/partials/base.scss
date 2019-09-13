@@ -17,9 +17,9 @@ html {
 body {
   @include flex-display; // Required to get flexbox to work with min-height in IE
   @include flex-direction(column); // Required to get flexbox to work with min-height in IE
+  @include var(background-color, bg);
+  @include var(color, text);
   margin: 0;
-  background-color: var(--c-bg);
-  color: var(--c-text);
   font-size: 1rem;
   line-height: 1.6;
   font-family: monospace, sans-serif;
