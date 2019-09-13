@@ -44,12 +44,8 @@ $gutter: 10px;
 // Breakpoint
 $breakpoint: 500px;
 
-// CSS variables
+// Native dark theme
 :root {
-  --c-bg: #{map-deep-get($color-theme, light, bg)};
-  --c-text: #{map-deep-get($color-theme, light, text)};
-  --c-text-alt: #{map-deep-get($color-theme, light, text-alt)};
-
   @media (prefers-color-scheme: dark) {
     --c-bg: #{map-deep-get($color-theme, dark, bg)};
     --c-text: #{map-deep-get($color-theme, dark, text)};

@@ -8,7 +8,7 @@
 @mixin var($property, $var-name) {
   // sass-lint:disable-block no-duplicate-properties
   #{$property}: #{map-deep-get($color-theme, light, $var-name)};
-  #{$property}: var(--c-#{$var-name});
+  #{$property}: var(--c-#{$var-name}, #{map-deep-get($color-theme, light, $var-name)});
 }
 
 @mixin flex-display {
