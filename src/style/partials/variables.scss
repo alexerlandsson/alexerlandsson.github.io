@@ -49,12 +49,6 @@ $breakpoint: 500px;
   --c-bg: #{map-deep-get($color-theme, light, bg)};
   --c-text: #{map-deep-get($color-theme, light, text)};
   --c-text-alt: #{map-deep-get($color-theme, light, text-alt)};
-  --c-selection-bg: #{map-get($color-selection, bg)};
-  --c-selection-text: #{map-get($color-selection, text)};
-  --c-avatar-shirt: #{map-get($color-avatar, shirt)};
-  --c-avatar-neck: #{map-get($color-avatar, neck)};
-  --c-avatar-head: #{map-get($color-avatar, head)};
-  --c-avatar-hair: #{map-get($color-avatar, hair)};
 
   @media (prefers-color-scheme: dark) {
     --c-bg: #{map-deep-get($color-theme, dark, bg)};

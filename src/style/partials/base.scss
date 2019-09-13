@@ -28,11 +28,11 @@ body {
 }
 
 ::selection {
-  background: var(--c-selection-bg);
-  color: var(--c-selection-text);
+  background: #{map-get($color-selection, bg)};
+  color: #{map-get($color-selection, text)};
 }
 
 ::-moz-selection {
-  background: var(--c-selection-bg);
-  color: var(--c-selection-text);
+  background: #{map-get($color-selection, bg)};
+  color: #{map-get($color-selection, text)};
 }

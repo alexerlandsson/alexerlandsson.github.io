@@ -9,17 +9,17 @@
 }
 
 .avatar__shirt {
-  fill: var(--c-avatar-shirt);
+  fill: #{map-get($color-avatar, shirt)};
 }
 
 .avatar__neck {
-  fill: var(--c-avatar-neck);
+  fill: #{map-get($color-avatar, neck)};
 }
 
 .avatar__head {
-  fill: var(--c-avatar-head);
+  fill: #{map-get($color-avatar, head)};
 }
 
 .avatar__hair {
-  fill: var(--c-avatar-hair);
+  fill: #{map-get($color-avatar, hair)};
 }
