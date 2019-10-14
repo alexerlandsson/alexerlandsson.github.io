@@ -13,7 +13,7 @@ h2 {
 }
 
 h1 {
-  word-spacing: -1ch;
+  word-spacing: -0.25em; // 0.25em is default word-spacing
 
   &:before {
     content: '@';
