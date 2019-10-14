@@ -24,6 +24,10 @@ var paths = {
   images: {
     src: './src/images/**/*',
     dest: './docs/images'
+  },
+  font: {
+    src: './src/font/**/*',
+    dest: './docs/font'
   }
 };
 
@@ -91,6 +95,14 @@ gulp.task('images', function() {
     .pipe(gulp.dest(paths.images.dest));
 });
 
+// Font
+
+gulp.task('font', function() {
+  return gulp
+    .src(paths.font.src)
+    .pipe(gulp.dest(paths.font.dest));
+});
+
 // Watch
 
 gulp.task('watch', function() {
@@ -100,4 +112,4 @@ gulp.task('watch', function() {
 
 // Default
 
-gulp.task('default', gulp.series('sass', 'html', 'amp', 'images'));
+gulp.task('default', gulp.series('sass', 'html', 'amp', 'images', 'font'));

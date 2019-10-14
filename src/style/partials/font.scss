@@ -1,0 +1,12 @@
+// Font
+
+// This file contains custom fonts used in this project.
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src:  url('./font/SourceSansPro-Regular.woff') format('woff'),
+        url('./font/SourceSansPro-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+}
