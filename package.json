@@ -13,16 +13,13 @@
     "gulp-rename": "^1.4.0",
     "gulp-replace": "^1.0.0",
     "gulp-sass": "^4.0.2",
-    "pre-commit": "^1.2.2",
-    "sass-lint": "1.12.1"
+    "pre-commit": "^1.2.2"
   },
   "scripts": {
-    "precommit-msg": "echo 'Pre-commit checks...\nDo not forget to run gulp if you have edited files to be built!' && exit 0",
-    "sass-lint": "sass-lint -v -q"
+    "precommit-msg": "echo 'Pre-commit checks...\nDo not forget to run gulp if you have edited files to be built!' && exit 0"
   },
   "pre-commit": [
-    "precommit-msg",
-    "sass-lint"
+    "precommit-msg"
   ],
   "repository": {
     "type": "git",
