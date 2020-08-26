@@ -5,7 +5,7 @@ var minifycss = require('gulp-clean-css');
 var replace = require('gulp-replace');
 var fs = require('fs');
 var fileinclude = require('gulp-file-include');
-var beautify = require('gulp-beautify');
+var htmlmin = require('gulp-htmlmin');
 
 var paths = {
   sass: {
@@ -31,18 +31,6 @@ var paths = {
   }
 };
 
-var beatufyOptions = {
-  'indent_size': 2,
-  'max_preserve_newlines': 1,
-  'content_unformatted': [
-    'pre',
-    'noscript',
-    'script',
-    'style'
-  ],
-  'extra_liners' : []
-};
-
 // CSS
 
 gulp.task('sass', function() {
@@ -57,34 +45,61 @@ gulp.task('sass', function() {
 // HTML
 
 gulp.task('html', function() {
-  return gulp
-    .src(paths.html.src)
-    .pipe(fileinclude({
-      prefix: '@@'
-    }))
-    .pipe(replace(/<link href="([^\.]+\.css)"[^>]*>/g, function(s) {
-      var style = fs.readFileSync(paths.sass.dest + '/default.min.css', 'utf8');
-      return '<style>' + style + '</style>';
-    }))
-    .pipe(beautify.html(beatufyOptions))
-    .pipe(gulp.dest(paths.html.dest));
+  return (
+    gulp
+      .src(paths.html.src)
+      .pipe(
+        fileinclude({
+          prefix: "@@",
+        })
+      )
+      .pipe(
+        replace(/<link href="([^\.]+\.css)"[^>]*>/g, function (s) {
+          var style = fs.readFileSync(
+            paths.sass.dest + "/default.min.css",
+            "utf8"
+          );
+          return "<style>" + style + "</style>";
+        })
+      )
+      .pipe(
+        htmlmin({
+          collapseWhitespace: true,
+          minifyJS: true,
+          processScripts: ["application/ld+json", "application/json"],
+        })
+      )
+      .pipe(gulp.dest(paths.html.dest))
+  );
 });
 
 // AMP
 
 gulp.task('amp', function() {
-  return gulp
-    .src(paths.amp.src)
-    .pipe(fileinclude({
-      prefix: '@@'
-    }))
-    .pipe(replace(/<link href="([^\.]+\.css)"[^>]*>/g, function(s) {
-      var style = fs.readFileSync(paths.sass.dest + '/amp.min.css', 'utf8');
-      return '<style amp-custom>' + style + '</style>';
-    }))
-    .pipe(beautify.html(beatufyOptions))
-    .pipe(rename({basename: 'index'}))
-    .pipe(gulp.dest(paths.amp.dest));
+  return (
+    gulp
+      .src(paths.amp.src)
+      .pipe(
+        fileinclude({
+          prefix: "@@",
+        })
+      )
+      .pipe(
+        replace(/<link href="([^\.]+\.css)"[^>]*>/g, function (s) {
+          var style = fs.readFileSync(paths.sass.dest + "/amp.min.css", "utf8");
+          return "<style amp-custom>" + style + "</style>";
+        })
+      )
+      .pipe(
+        htmlmin({
+          collapseWhitespace: true,
+          minifyJS: true,
+          processScripts: ["application/ld+json", "application/json"],
+        })
+      )
+      .pipe(rename({ basename: "index" }))
+      .pipe(gulp.dest(paths.amp.dest))
+  );
 });
 
 // Images
