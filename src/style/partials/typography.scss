@@ -23,7 +23,7 @@ h1 {
 h2 {
   @include var(color, text-alt);
   margin-top: 0;
-  margin-bottom: gutter(1);
+  margin-bottom: size(1);
 
   &:before {
     content: '#';
@@ -31,8 +31,8 @@ h2 {
 }
 
 p {
-  margin-top: gutter(1);
-  margin-bottom: gutter(1);
+  margin-top: size(1);
+  margin-bottom: size(1);
 }
 
 a {

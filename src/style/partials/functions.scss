@@ -3,8 +3,8 @@
 // All SCSS functions used in this project should be listed
 // in this file.
 
-// Calculate gutter from a given multiplier
-@function gutter($multiplier: 1) {
+// Calculate size from a given multiplier
+@function size($multiplier: 1) {
   @return ($gutter * $multiplier);
 }
 

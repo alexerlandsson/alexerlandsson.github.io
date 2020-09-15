@@ -6,10 +6,10 @@
 .page-section {
   $root: &;
 
-  padding: gutter(5);
+  padding: size(5);
 
   @media (max-width: $breakpoint) {
-    padding: gutter(5) gutter(3);
+    padding: size(5) size(3);
   }
 
   & + & {
@@ -25,7 +25,7 @@
     #{$root} {
       &__content {
         @include position-sticky;
-        top: gutter(5);
+        top: size(5);
         max-width: none;
       }
     }
