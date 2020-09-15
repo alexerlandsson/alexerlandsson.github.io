@@ -6,10 +6,10 @@
   list-style: none;
   margin: 0;
   padding: 0;
-}
 
-.link-list__item {
-  & + .link-list__item {
-    margin-top: gutter(0.5);
+  &__item {
+    & + & {
+      margin-top: gutter(0.5);
+    }
   }
 }

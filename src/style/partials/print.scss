@@ -21,14 +21,14 @@
   .page-section {
     padding: 0 !important;
     margin-top: 1cm;
-  }
 
-  .page-section--main {
-    min-height: 0 !important;
-  }
+    &--main {
+      min-height: 0 !important;
+    }
 
-  .page-section__content {
-    max-width: none !important;
+    &__content {
+      max-width: none !important;
+    }
   }
 
   a {

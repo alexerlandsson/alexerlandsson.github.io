@@ -6,20 +6,20 @@
   @include var(background-color, text-alt);
   display: block;
   border-radius: 50%;
-}
 
-.avatar__shirt {
-  fill: #{map-get($color-avatar, shirt)};
-}
+  &__shirt {
+    fill: #{map-get($color-avatar, shirt)};
+  }
 
-.avatar__neck {
-  fill: #{map-get($color-avatar, neck)};
-}
+  &__neck {
+    fill: #{map-get($color-avatar, neck)};
+  }
 
-.avatar__head {
-  fill: #{map-get($color-avatar, head)};
-}
+  &__head {
+    fill: #{map-get($color-avatar, head)};
+  }
 
-.avatar__hair {
-  fill: #{map-get($color-avatar, hair)};
+  &__hair {
+    fill: #{map-get($color-avatar, hair)};
+  }
 }
