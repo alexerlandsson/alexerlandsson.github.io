@@ -34,6 +34,10 @@
   }
 }
 
+.page-section--lazy {
+  content-visibility: auto;
+}
+
 .page-section__content {
   max-width: 500px;
 
