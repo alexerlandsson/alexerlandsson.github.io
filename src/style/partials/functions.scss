@@ -5,7 +5,7 @@
 
 // Calculate size from a given multiplier
 @function size($multiplier: 1) {
-  @return ($gutter * $multiplier);
+  @return ($baseUnit * $multiplier);
 }
 
 // Fetch deeply nested values from a map
