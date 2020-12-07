@@ -26,6 +26,10 @@ body {
   letter-spacing: 0.04em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  @media (prefers-reduced-data: reduce) {
+    font-family: sans-serif;
+  }
 }
 
 ::selection {
