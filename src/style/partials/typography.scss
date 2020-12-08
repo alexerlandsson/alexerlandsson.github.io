@@ -40,11 +40,4 @@ a {
   &:visited {
     @include var(color, text);
   }
-
-  // Hover on pointing device units only
-  @media(hover: hover) and (pointer: fine) {
-    &:hover {
-      @include var(color, text-alt);
-    }
-  }
 }

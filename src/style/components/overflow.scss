@@ -1,0 +1,90 @@
+// Overflow
+
+// Horizontal scrollable list of items.
+
+.overflow {
+  $itemSpacing: size(2);
+  $itemSpacingMobile: size(1.5);
+  $scrollbarHeight: 2px;
+
+  padding-top: $itemSpacing;
+  padding-bottom: ($itemSpacing + $scrollbarHeight);
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+
+  @media (max-width: $breakpoint) {
+    padding-top: $itemSpacingMobile;
+    padding-bottom: ($itemSpacingMobile + $scrollbarHeight);
+  }
+
+  &::-webkit-scrollbar {
+    height: $scrollbarHeight;
+  }
+
+  &::-webkit-scrollbar-track,
+  &::-webkit-scrollbar-thumb {
+    border: size(5) solid transparent;
+    background-clip: padding-box;
+
+    @media (max-width: $breakpoint) {
+      border-width: size(3);
+    }
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #efefef;
+
+    @media (prefers-color-scheme: dark) {
+      background-color: #191919;
+    }
+  }
+
+  &::-webkit-scrollbar-thumb {
+    @include var(background-color, text-alt);
+  }
+
+  .page-section & {
+    margin: 0 size(-5);
+
+    @media (max-width: $breakpoint) {
+      margin: 0 size(-3);
+    }
+  }
+
+  &__list {
+    @include flex-display;
+    @include align-items(stretch);
+    position: relative;
+    list-style: none;
+    padding: 0;
+    padding-left: size(5);
+    margin: (($itemSpacing / 2) * -1);
+
+    &:after {
+      @include flex-shrink(0);
+      content: '';
+      width: (size(5) - ($itemSpacing / 2));
+      height: 1px;
+    }
+
+    @media (max-width: $breakpoint) {
+      padding-left: size(3);
+      margin: (($itemSpacingMobile / 2) * -1);
+
+      &:after {
+        width: (size(3) - ($itemSpacingMobile / 2));
+      }
+    }
+  }
+
+  &__item {
+    @include flex-shrink(0);
+    padding: ($itemSpacing / 2);
+    width: 300px;
+
+    @media (max-width: $breakpoint) {
+      width: calc(100% - #{size(3)});
+      padding: ($itemSpacingMobile / 2);
+    }
+  }
+}

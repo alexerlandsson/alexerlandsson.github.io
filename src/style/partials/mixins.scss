@@ -87,6 +87,22 @@
   align-items: $align;
 }
 
+@mixin flex($flex: 1) {
+  -webkit-flex: $flex;
+  -ms-flex: $flex;
+  flex: $flex;
+}
+
+@mixin flex-shrink($shrink: 1) {
+  -ms-flex-negative: $shrink;
+  flex-shrink: $shrink;
+}
+
+@mixin flex-wrap($wrap: nowrap) {
+  -ms-flex-wrap: $wrap;
+  flex-wrap: $wrap;
+}
+
 @mixin position-sticky {
   // sass-lint:disable-block no-duplicate-properties
   position: -webkit-sticky;
