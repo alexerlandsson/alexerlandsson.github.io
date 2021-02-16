@@ -7,14 +7,14 @@
   $itemSpacingMobile: size(1.5);
   $scrollbarHeight: 2px;
 
-  padding-top: $itemSpacing;
-  padding-bottom: ($itemSpacing + $scrollbarHeight);
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
+  margin-top: $itemSpacing;
 
   @media (max-width: $breakpoint) {
     padding-top: $itemSpacingMobile;
     padding-bottom: ($itemSpacingMobile + $scrollbarHeight);
+    margin-top: 0;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   &::-webkit-scrollbar {
@@ -44,8 +44,6 @@
   }
 
   .page-section & {
-    margin: 0 size(-5);
-
     @media (max-width: $breakpoint) {
       margin: 0 size(-3);
     }
@@ -54,39 +52,35 @@
   &__list {
     @include flex-display;
     @include align-items(stretch);
+    @include flex-wrap(wrap);
     position: relative;
     list-style: none;
     padding: 0;
-    padding-left: size(5);
-    margin: 0;
-
-    &:after {
-      @include flex-shrink(0);
-      content: '';
-      width: (size(5) - ($itemSpacing / 2));
-      height: 1px;
-    }
+    margin: (($itemSpacing / 2) * -1);
 
     @media (max-width: $breakpoint) {
+      @include flex-wrap(nowrap);
       padding-left: size(3);
-      margin: (($itemSpacingMobile / 2) * -1);
+      margin: 0;
 
       &:after {
-        width: (size(3) - ($itemSpacingMobile / 2));
+        @include flex-shrink(0);
+        content: "";
+        width: size(3);
+        height: 1px;
       }
     }
   }
 
   &__item {
     @include flex-shrink(0);
-    width: 300px;
-
-    & + & {
-      padding-left: $itemSpacing;
-    }
+    width: 375px;
+    padding: ($itemSpacing / 2);
 
     @media (max-width: $breakpoint) {
       width: calc(100% - #{size(3)});
+      padding: 0;
+
       & + & {
         padding-left: $itemSpacingMobile;
       }
