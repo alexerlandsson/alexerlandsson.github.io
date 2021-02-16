@@ -58,7 +58,7 @@
     list-style: none;
     padding: 0;
     padding-left: size(5);
-    margin: (($itemSpacing / 2) * -1);
+    margin: 0;
 
     &:after {
       @include flex-shrink(0);
@@ -79,12 +79,17 @@
 
   &__item {
     @include flex-shrink(0);
-    padding: ($itemSpacing / 2);
     width: 300px;
+
+    & + & {
+      padding-left: $itemSpacing;
+    }
 
     @media (max-width: $breakpoint) {
       width: calc(100% - #{size(3)});
-      padding: ($itemSpacingMobile / 2);
+      & + & {
+        padding-left: $itemSpacingMobile;
+      }
     }
   }
 }
