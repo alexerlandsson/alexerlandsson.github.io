@@ -1,4 +1,9 @@
 .link {
+  &,
+  &:visited {
+    @include var(color, text);
+  }
+
   // Hover on pointing device units only
   @media(hover: hover) and (pointer: fine) {
     &:hover {

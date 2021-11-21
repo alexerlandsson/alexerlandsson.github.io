@@ -3,87 +3,67 @@
 // Horizontal scrollable list of items.
 
 .overflow {
-  $itemSpacing: size(2);
-  $itemSpacingMobile: size(1.5);
-  $scrollbarHeight: 2px;
-
-  margin-top: $itemSpacing;
+  overflow: hidden;
+  margin-top: size(2);
+  margin-left: size(-5);
+  margin-right: size(-5);
 
   @media (max-width: $breakpoint) {
-    padding-top: $itemSpacingMobile;
-    padding-bottom: ($itemSpacingMobile + $scrollbarHeight);
-    margin-top: 0;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  &::-webkit-scrollbar {
-    height: $scrollbarHeight;
-  }
-
-  &::-webkit-scrollbar-track,
-  &::-webkit-scrollbar-thumb {
-    border: size(5) solid transparent;
-    background-clip: padding-box;
-
-    @media (max-width: $breakpoint) {
-      border-width: size(3);
-    }
-  }
-
-  &::-webkit-scrollbar-track {
-    background-color: #efefef;
-
-    @media (prefers-color-scheme: dark) {
-      background-color: #191919;
-    }
-  }
-
-  &::-webkit-scrollbar-thumb {
-    @include var(background-color, text-alt);
-  }
-
-  .page-section & {
-    @media (max-width: $breakpoint) {
-      margin: 0 size(-3);
-    }
+    margin-left: size(-3);
+    margin-right: size(-3);
   }
 
   &__list {
     @include flex-display;
     @include align-items(stretch);
-    @include flex-wrap(wrap);
-    position: relative;
     list-style: none;
-    padding: 0;
-    margin: (($itemSpacing / 2) * -1);
+    padding: 0 size(5);
+    margin: 0 size(-1);
+    overflow: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: size(5);
+
+    &::after {
+      content: '';
+      display: block;
+      flex-shrink: 0;
+      width: size(5);
+      margin-right: size(-5);
+    }
 
     @media (max-width: $breakpoint) {
-      @include flex-wrap(nowrap);
-      padding-left: size(3);
-      margin: 0;
+      padding: 0 size(3);
+      margin: 0 size(-0.75);
+      scroll-padding-left: size(3);
 
-      &:after {
-        @include flex-shrink(0);
-        content: "";
+       &::after {
         width: size(3);
-        height: 1px;
+        margin-right: size(-3);
       }
     }
   }
 
   &__item {
-    @include flex-shrink(0);
-    width: 375px;
-    padding: ($itemSpacing / 2);
+    @include flex(1 0 auto);
+    padding: 0 size(1);
+    scroll-snap-align: start;
+    width: 100%;
+    max-width: 100%;
 
     @media (max-width: $breakpoint) {
-      width: calc(100% - #{size(3)});
-      padding: 0;
+      padding: 0 size(0.75);
+    }
 
-      & + & {
-        padding-left: $itemSpacingMobile;
-      }
+    @media (min-width: 800px) {
+      width: 50%;
+    }
+
+    @media (min-width: 1100px) {
+      width: 33.333%;
+    }
+
+    @media (min-width: 1300px) {
+      width: 25%;
     }
   }
 }

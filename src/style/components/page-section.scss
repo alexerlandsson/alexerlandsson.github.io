@@ -4,8 +4,6 @@
 // blocks used in this project.
 
 .page-section {
-  $root: &;
-
   padding: size(5);
 
   @media (max-width: $breakpoint) {
@@ -21,14 +19,6 @@
     @include flex-direction(column);
     @include justify-content(center);
     min-height: 70vh;
-
-    #{$root} {
-      &__content {
-        @include position-sticky;
-        top: size(5);
-        max-width: none;
-      }
-    }
 
     p {
       @include var(color, text-alt);
@@ -53,5 +43,10 @@
         margin-bottom: 0;
       }
     }
+  }
+
+  &__sticky {
+    @include position-sticky;
+    top: size(5);
   }
 }

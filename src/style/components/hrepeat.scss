@@ -1,0 +1,13 @@
+.hrepeat {
+  @include flex-display;
+  @include align-items(center);
+  margin: size(-1);
+
+  &__item {
+    padding: size(1);
+
+    &--no-shrink {
+      @include flex-shrink(0);
+    }
+  }
+}

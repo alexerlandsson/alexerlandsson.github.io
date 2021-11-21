@@ -3,9 +3,13 @@
 // SCSS used to style the appearance of the avatar component.
 
 .avatar {
+  $avatar-size: size(6);
+
   @include var(background-color, text-alt);
   display: block;
-  border-radius: 50%;
+  width: $avatar-size;
+  height: $avatar-size;
+  border-radius: size(1);
 
   &__shirt {
     fill: #{map-get($color-avatar, shirt)};
