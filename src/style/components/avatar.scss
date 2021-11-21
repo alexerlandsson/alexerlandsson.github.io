@@ -5,10 +5,11 @@
 .avatar {
   $avatar-size: size(6);
 
-  @include var(background-color, text-alt);
+  //@include var(background-color, text-alt);
   display: block;
   width: $avatar-size;
   height: $avatar-size;
+  background-color: rgba(0, 0, 0, 0.03);
   border-radius: size(1);
 
   &__shirt {
@@ -25,5 +26,9 @@
 
   &__hair {
     fill: #{map-get($color-avatar, hair)};
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background-color: rgba(255, 255, 255, 0.05);
   }
 }
