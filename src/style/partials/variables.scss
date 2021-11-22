@@ -44,6 +44,10 @@ $baseUnit: 10px;
 // Breakpoint
 $breakpoint: 500px;
 
+// Page Section Gutter
+$page-section-gutter: 50px;
+$page-section-gutter-mobile: 30px;
+
 // Native dark theme
 :root {
   @media (prefers-color-scheme: dark) {

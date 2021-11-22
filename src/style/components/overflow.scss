@@ -3,14 +3,19 @@
 // Horizontal scrollable list of items.
 
 .overflow {
+  $item-spacing: size(2); // Spacing between items
+  $item-spacing-mobile: size(1.5); // Spacing between items on small screens
+  $scrollbar-height: size(0.25); // Height of scrollbar
+  $scrollbar-spacing: size(2); // Spacing between scrollbar and scrollable element
+
   overflow: hidden;
   margin-top: size(2);
-  margin-left: size(-5);
-  margin-right: size(-5);
+  margin-left: $page-section-gutter * -1;
+  margin-right: $page-section-gutter * -1;
 
   @media (max-width: $breakpoint) {
-    margin-left: size(-3);
-    margin-right: size(-3);
+    margin-left: $page-section-gutter-mobile * -1;
+    margin-right: $page-section-gutter-mobile * -1;
   }
 
   &__list {
@@ -18,7 +23,7 @@
     @include align-items(stretch);
     list-style: none;
     padding: 0 size(5);
-    margin: 0 size(-1);
+    margin: 0 ($item-spacing * -0.5);
     overflow: auto;
     scroll-snap-type: x mandatory;
     scroll-padding-left: size(5);
@@ -27,31 +32,37 @@
       content: '';
       display: block;
       flex-shrink: 0;
-      width: size(5);
-      margin-right: size(-5);
+      width: $page-section-gutter;
+      margin-right: $page-section-gutter * -1;
     }
 
     @media (max-width: $breakpoint) {
-      padding: 0 size(3);
-      margin: 0 size(-0.75);
-      scroll-padding-left: size(3);
+      padding: 0 $page-section-gutter-mobile;
+      margin: 0 ($item-spacing-mobile * -0.5);
+      scroll-padding-left: $page-section-gutter-mobile;
 
-       &::after {
-        width: size(3);
-        margin-right: size(-3);
+      &::after {
+        width: $page-section-gutter-mobile;
+        margin-right: $page-section-gutter-mobile * -1;
+      }
+
+      &::-webkit-scrollbar-track,
+      &::-webkit-scrollbar-thumb {
+        border-left: ($page-section-gutter-mobile + $item-spacing-mobile / 2) solid transparent;
+        border-right: ($page-section-gutter-mobile + $item-spacing-mobile / 2) solid transparent;
       }
     }
   }
 
   &__item {
     @include flex(1 0 auto);
-    padding: 0 size(1);
+    padding: 0 ($item-spacing / 2);
     scroll-snap-align: start;
     width: 100%;
     max-width: 100%;
 
     @media (max-width: $breakpoint) {
-      padding: 0 size(0.75);
+      padding: 0 ($item-spacing-mobile / 2);
     }
 
     @media (min-width: 800px) {

@@ -4,10 +4,10 @@
 // blocks used in this project.
 
 .page-section {
-  padding: size(5);
+  padding: $page-section-gutter;
 
   @media (max-width: $breakpoint) {
-    padding: size(5) size(3);
+    padding: $page-section-gutter $page-section-gutter-mobile;
   }
 
   & + & {
@@ -25,10 +25,6 @@
       margin-top: 0;
       margin-bottom: 0;
     }
-  }
-
-  &--lazy {
-    content-visibility: auto;
   }
 
   &__content {

@@ -9,10 +9,10 @@ h2 {
   font: inherit;
   font-size: 1em;
   margin: 0;
-  text-transform: lowercase;
 }
 
 h1 {
+  text-transform: lowercase;
   word-spacing: -0.25em; // 0.25em is default word-spacing
 
   &:before {
@@ -24,10 +24,6 @@ h2 {
   @include var(color, text-alt);
   margin-top: 0;
   margin-bottom: size(1);
-
-  &:before {
-    content: '#';
-  }
 }
 
 p {
