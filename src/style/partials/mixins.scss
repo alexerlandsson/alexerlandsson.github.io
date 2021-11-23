@@ -4,13 +4,6 @@
 // Mixins are currenly used to add browser specific prefixes for
 // maximum control of the CSS output.
 
-// Create fallback for css variables
-@mixin var($property, $var-name) {
-  // sass-lint:disable-block no-duplicate-properties
-  #{$property}: #{map-deep-get($color-theme, light, $var-name)};
-  #{$property}: var(--c-#{$var-name}, #{map-deep-get($color-theme, light, $var-name)});
-}
-
 @mixin flex-display {
   // sass-lint:disable-block no-duplicate-properties
   display: -webkit-box;

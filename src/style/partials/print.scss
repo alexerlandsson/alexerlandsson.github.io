@@ -5,13 +5,18 @@
 @media print {
   // sass-lint:disable-block no-important
 
+  :root {
+    --c-print: #fff;
+    --c-print-text: #000;
+  }
+
   * {
-    color: #{map-get($color-print, text)} !important;
+    color: var(--c-print-text) !important;
     font-size: 10pt !important;
   }
 
   body {
-    background-color: #{map-get($color-print, bg)};
+    background-color: var(--c-print);
   }
 
   .no-print {

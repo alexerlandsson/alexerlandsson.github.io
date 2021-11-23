@@ -10,3 +10,13 @@ abbr {
     cursor: inherit;
   }
 }
+
+::selection {
+  background-color: var(--c-selection-bg);
+  color: var(--c-selection-text);
+}
+
+::-moz-selection {
+  background-color: var(--c-selection-bg);
+  color: var(--c-selection-text);
+}

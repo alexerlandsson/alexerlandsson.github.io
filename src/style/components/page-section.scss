@@ -4,10 +4,10 @@
 // blocks used in this project.
 
 .page-section {
-  padding: $page-section-gutter;
+  padding: var(--page-section-gutter);
 
   @media (max-width: $breakpoint) {
-    padding: $page-section-gutter $page-section-gutter-mobile;
+    padding: size(5) var(--page-section-gutter);
   }
 
   & + & {
@@ -21,7 +21,7 @@
     min-height: 70vh;
 
     p {
-      @include var(color, text-alt);
+      color: var(--c-text-alt);
       margin-top: 0;
       margin-bottom: 0;
     }

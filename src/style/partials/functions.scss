@@ -4,7 +4,7 @@
 // in this file.
 
 // Calculate size from a given multiplier
-@function size($multiplier: 1) {
+@function size($multiplier: 1, $baseUnit: 10px) {
   @return ($baseUnit * $multiplier);
 }
 

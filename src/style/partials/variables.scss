@@ -7,52 +7,45 @@
 // Map containing theme colors
 $color-theme: (
   light: (
-    bg: #fff,
-    text: #333,
-    text-alt: #757575
+    white: #fff,
+    gray: #757575,
+    graylight: #f5f5f5,
+    graydark: #141414,
+    blue: #0000ff,
   ),
   dark: (
-    bg: #1d1c1c,
-    text: #fff,
-    text-alt: #8c8c8c
+    black: #141414,
+    blacklight: #101010,
+    white: #fff,
+    gray: #8c8c8c,
   )
 );
-
-// Map containing colors for text selection
-$color-selection: (
-  bg: #0000ff,
-  text: #fff
-);
-
-// Map containing colors for print
-$color-print: (
-  bg: #fff,
-  text: #000
-);
-
-// Map containing colors for avatar
-$color-avatar: (
-  shirt: #000,
-  neck: #bea37c,
-  head: #cfb899,
-  hair: #3a3022
-);
-
-// Base unit
-$baseUnit: 10px;
 
 // Breakpoint
 $breakpoint: 500px;
 
-// Page Section Gutter
-$page-section-gutter: 50px;
-$page-section-gutter-mobile: 30px;
-
-// Native dark theme
 :root {
+  --c-bg-from: #{map-deep-get($color-theme, light, white)};
+  --c-bg-to: #{map-deep-get($color-theme, light, graylight)};
+  --c-overlay: #{rgba(map-deep-get($color-theme, light, graydark), 0.03)};
+  --c-text-main: #{map-deep-get($color-theme, light, graydark)};
+  --c-text-alt: #{map-deep-get($color-theme, light, gray)};
+  --c-selection-bg: #{map-deep-get($color-theme, light, blue)};
+  --c-selection-text: #{map-deep-get($color-theme, light, white)};
+
+  --page-section-gutter: 50px;
+
   @media (prefers-color-scheme: dark) {
-    --c-bg: #{map-deep-get($color-theme, dark, bg)};
-    --c-text: #{map-deep-get($color-theme, dark, text)};
-    --c-text-alt: #{map-deep-get($color-theme, dark, text-alt)};
+    --c-bg-from: #{map-deep-get($color-theme, dark, black)};
+    --c-bg-to: #{map-deep-get($color-theme, dark, blacklight)};
+    --c-overlay: #{rgba(map-deep-get($color-theme, dark, white), 0.02)};
+    --c-text-main: #{map-deep-get($color-theme, dark, white)};
+    --c-text-alt: #{map-deep-get($color-theme, dark, gray)};
+  }
+}
+
+@media (max-width: $breakpoint) {
+  :root {
+    --page-section-gutter: 30px;
   }
 }

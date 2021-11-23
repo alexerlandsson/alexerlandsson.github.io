@@ -3,67 +3,45 @@
 // Horizontal scrollable list of items.
 
 .overflow {
+  --item-spacing: #{size(2)};
+
+  @media (max-width: $breakpoint) {
+    --item-spacing: #{size(1.5)};
+  }
+
   $item-spacing: size(2); // Spacing between items
   $item-spacing-mobile: size(1.5); // Spacing between items on small screens
-  $scrollbar-height: size(0.25); // Height of scrollbar
-  $scrollbar-spacing: size(2); // Spacing between scrollbar and scrollable element
 
   overflow: hidden;
   margin-top: size(2);
-  margin-left: $page-section-gutter * -1;
-  margin-right: $page-section-gutter * -1;
-
-  @media (max-width: $breakpoint) {
-    margin-left: $page-section-gutter-mobile * -1;
-    margin-right: $page-section-gutter-mobile * -1;
-  }
+  margin-left: calc(var(--page-section-gutter) * -1);
+  margin-right: calc(var(--page-section-gutter) * -1);
 
   &__list {
     @include flex-display;
     @include align-items(stretch);
     list-style: none;
-    padding: 0 size(5);
-    margin: 0 ($item-spacing * -0.5);
+    padding: 0 var(--page-section-gutter);
+    margin: 0 calc(var(--item-spacing) * -0.5);
     overflow: auto;
     scroll-snap-type: x mandatory;
-    scroll-padding-left: size(5);
+    scroll-padding-left: var(--page-section-gutter);
 
     &::after {
       content: '';
       display: block;
       flex-shrink: 0;
-      width: $page-section-gutter;
-      margin-right: $page-section-gutter * -1;
-    }
-
-    @media (max-width: $breakpoint) {
-      padding: 0 $page-section-gutter-mobile;
-      margin: 0 ($item-spacing-mobile * -0.5);
-      scroll-padding-left: $page-section-gutter-mobile;
-
-      &::after {
-        width: $page-section-gutter-mobile;
-        margin-right: $page-section-gutter-mobile * -1;
-      }
-
-      &::-webkit-scrollbar-track,
-      &::-webkit-scrollbar-thumb {
-        border-left: ($page-section-gutter-mobile + $item-spacing-mobile / 2) solid transparent;
-        border-right: ($page-section-gutter-mobile + $item-spacing-mobile / 2) solid transparent;
-      }
+      width: var(--page-section-gutter);
+      margin-right: calc(var(--page-section-gutter) * -1);
     }
   }
 
   &__item {
     @include flex(1 0 auto);
-    padding: 0 ($item-spacing / 2);
+    padding: 0 calc(var(--item-spacing) / 2);
     scroll-snap-align: start;
     width: 100%;
     max-width: 100%;
-
-    @media (max-width: $breakpoint) {
-      padding: 0 ($item-spacing-mobile / 2);
-    }
 
     @media (min-width: 800px) {
       width: 50%;

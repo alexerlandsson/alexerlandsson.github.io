@@ -21,9 +21,9 @@ h1 {
 }
 
 h2 {
-  @include var(color, text-alt);
   margin-top: 0;
   margin-bottom: size(1);
+  color: var(--c-text-alt);
 }
 
 p {

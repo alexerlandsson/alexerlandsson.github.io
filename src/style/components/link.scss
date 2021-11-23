@@ -1,13 +1,13 @@
 .link {
   &,
   &:visited {
-    @include var(color, text);
+    color: var(--c-text-main);
   }
 
   // Hover on pointing device units only
   @media(hover: hover) and (pointer: fine) {
     &:hover {
-      @include var(color, text-alt);
+      color: var(--c-text-alt);
     }
   }
 }
