@@ -113,3 +113,13 @@
   -ms-transform-origin: $value;
   transform-origin: $value;
 }
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}

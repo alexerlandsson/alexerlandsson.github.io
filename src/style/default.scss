@@ -9,8 +9,9 @@
 @import
 'partials/functions',
 'partials/variables',
-'partials/font',
 'partials/mixins',
+'partials/keyframes',
+'partials/font',
 'partials/reset',
 'partials/base',
 'partials/typography',
@@ -19,9 +20,10 @@
 
 // Components
 @import
+'components/animate',
 'components/avatar',
 'components/badge',
-'components/hrepeat',
+'components/hstack',
 'components/link-list',
 'components/link',
 'components/overflow',

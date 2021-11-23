@@ -1,4 +1,8 @@
-.hrepeat {
+// Horizontal Stack
+
+// Component used to horizontally stack elements.
+
+.hstack {
   @include flex-display;
   @include align-items(center);
   margin: size(-1);

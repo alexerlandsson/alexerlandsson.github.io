@@ -24,8 +24,15 @@
     padding: 0 var(--page-section-gutter);
     margin: 0 calc(var(--item-spacing) * -0.5);
     overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
     scroll-snap-type: x mandatory;
     scroll-padding-left: var(--page-section-gutter);
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     &::after {
       content: '';

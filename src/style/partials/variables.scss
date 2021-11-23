@@ -27,18 +27,18 @@ $breakpoint: 500px;
 :root {
   --c-bg-from: #{map-deep-get($color-theme, light, white)};
   --c-bg-to: #{map-deep-get($color-theme, light, graylight)};
-  --c-overlay: #{rgba(map-deep-get($color-theme, light, graydark), 0.03)};
+  --c-overlay: #{rgba(map-deep-get($color-theme, light, graydark), 0.04)};
   --c-text-main: #{map-deep-get($color-theme, light, graydark)};
   --c-text-alt: #{map-deep-get($color-theme, light, gray)};
   --c-selection-bg: #{map-deep-get($color-theme, light, blue)};
   --c-selection-text: #{map-deep-get($color-theme, light, white)};
 
-  --page-section-gutter: 50px;
+  --page-section-gutter: #{size(6)};
 
   @media (prefers-color-scheme: dark) {
     --c-bg-from: #{map-deep-get($color-theme, dark, black)};
     --c-bg-to: #{map-deep-get($color-theme, dark, blacklight)};
-    --c-overlay: #{rgba(map-deep-get($color-theme, dark, white), 0.02)};
+    --c-overlay: #{rgba(map-deep-get($color-theme, dark, white), 0.03)};
     --c-text-main: #{map-deep-get($color-theme, dark, white)};
     --c-text-alt: #{map-deep-get($color-theme, dark, gray)};
   }
@@ -46,6 +46,6 @@ $breakpoint: 500px;
 
 @media (max-width: $breakpoint) {
   :root {
-    --page-section-gutter: 30px;
+    --page-section-gutter: #{size(3)};
   }
 }

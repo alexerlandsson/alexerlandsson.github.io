@@ -1,0 +1,23 @@
+// Animate
+
+// Helping classes used to animate elements.
+
+.animate {
+  $animation-content-delay: 400ms;
+  $animation-content-duration: 400ms;
+  $animation-avatar-delay: $animation-content-delay + $animation-content-duration - 250ms;
+  $animation-avatar-duration: 300ms;
+  $animation-cubic-bezier: cubic-bezier(0.47, 1.64, 0.41, 0.8);
+
+  &--main-avatar {
+    @include transform(scale(0));
+    animation: no-transform $animation-avatar-duration
+      $animation-cubic-bezier $animation-avatar-delay forwards;
+  }
+
+  &--main-content {
+    @include transform(translateX(-80px));
+    animation: no-transform $animation-content-duration $animation-cubic-bezier
+      $animation-content-delay forwards;
+  }
+}
