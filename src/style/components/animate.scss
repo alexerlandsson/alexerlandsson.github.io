@@ -21,6 +21,7 @@
     @include transform(translateX(-80px));
     animation: no-transform $animation-content-duration $animation-cubic-bezier
       $animation-load-delay forwards;
+    will-change: transform;
   }
 
   // Content blocks
