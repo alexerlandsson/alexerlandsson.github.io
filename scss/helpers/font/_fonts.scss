@@ -1,0 +1,12 @@
+/// This file contains font settings and exposes
+/// the fonts using mixins.
+
+@use "../variable" as *;
+
+@mixin font-regular {
+  font-weight: scss-var(font, weight, regular);
+}
+
+@mixin font-bold {
+  font-weight: scss-var(font, weight, strong);
+}

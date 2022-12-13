@@ -1,0 +1,8 @@
+/// Import files using @use for styling in the breakpoint 'md'
+
+// Components
+@use "../materials/components/content/content-md";
+@use "../materials/components/overflow-grid/overflow-grid-md";
+
+// Layout
+@use "../materials/layout/root/root-md";

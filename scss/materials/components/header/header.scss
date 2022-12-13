@@ -1,0 +1,9 @@
+@use "../../../helpers" as *;
+
+.header {
+  padding: var(--main-gutter) var(--main-gutter) 0 var(--main-gutter);
+
+  &__heading {
+    @include font-bold;
+  }
+}

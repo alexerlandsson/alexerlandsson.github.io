@@ -1,0 +1,16 @@
+@use "../../../helpers" as *;
+
+.root {
+  padding: var(--main-gutter) 0;
+
+  &__section {
+    padding: var(--main-gutter);
+
+    &--grow {
+      @include flex-display;
+      @include flex-direction(column);
+      @include justify-content(center);
+      min-height: 70vh;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@use "../../../helpers" as *;
+
+.heading {
+  @include font-bold;
+
+  &:not(&--no-margin) {
+    margin-bottom: var(--main-gutter);
+  }
+
+  &--2 {
+    font-size: 2rem;
+  }
+
+  &--3 {
+    font-size: 1.5rem;
+  }
+}

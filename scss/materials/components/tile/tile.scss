@@ -1,0 +1,6 @@
+@use "../../../helpers" as *;
+
+.tile {
+  padding: var(--main-gutter);
+  aspect-ratio: scss-var(aspect-ratio, portrait);
+}

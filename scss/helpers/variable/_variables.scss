@@ -1,0 +1,90 @@
+/// Variables to use across the project.
+/// Declare variables in the $variables map and fetch
+/// a variable using the scss-var() function.
+
+@use "sass:map";
+@use "sass:math";
+@use "sass:list";
+
+// This map is used to declare variables
+$variables: (
+  font: (
+    family: (
+      main: (
+        "Manrope",
+        sans-serif,
+      ),
+      monospace: monospace,
+    ),
+    weight: (
+      regular: 400,
+      strong: 600,
+    ),
+    line-height: (
+      main: 1.5,
+      alt: 1.2,
+    ),
+    letter-spacing: (
+      main: 0.05em,
+      negative: -0.05em,
+    ),
+    size: (
+      xxsmall: 0.625rem,
+      xsmall: 0.75rem,
+      small: 0.875rem,
+      regular: 1rem,
+      large: 1.125rem,
+      xlarge: 1.25rem,
+      xxlarge: 1.5rem,
+      xxxlarge: 2rem,
+    ),
+    fluid-size: (
+      small: clamp(0.75rem, 1.5vw, 1rem),
+      regular: clamp(1rem, 2vw, 1.5rem),
+      large: clamp(1.5rem, 3vw, 2.5rem),
+    ),
+  ),
+  border: (
+    width: (
+      main: 1px,
+      alt: 2px,
+    ),
+    radius: (
+      main: 3px,
+      alt: 8px,
+    ),
+  ),
+  animation: (
+    duration: (
+      fast: 150ms,
+      default: 200ms,
+      slow: 300ms,
+      xslow: 400ms,
+    ),
+    timing-function: (
+      cubic-bezier: cubic-bezier(0.47, 1.64, 0.41, 0.8),
+    ),
+  ),
+  aspect-ratio: (
+    square: list.slash(1, 1),
+    landscape: list.slash(4, 3),
+    portrait: list.slash(3, 4),
+    widescreen: list.slash(16, 9),
+    ultrawide: list.slash(18, 5),
+    golden-ratio: list.slash(1.618, 1),
+  ),
+  z-index: (
+    important: 2147483647,
+  ),
+);
+
+// This function is used to use variables in the project
+@function scss-var($keys...) {
+  $value: map.get($variables, $keys...);
+
+  @if not $value {
+    @error "Variable '#{$keys}' does not exist in $variables.";
+  }
+
+  @return $value;
+}
