@@ -13,6 +13,8 @@
     border-top: 1px solid var(--c-border);
     border-bottom: 1px solid var(--c-border);
     overflow: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 0;
     overscroll-behavior-x: none;
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -26,6 +28,7 @@
     @include flex(1 0 auto);
     width: var(--overflow-grid-item-width);
     max-width: var(--overflow-grid-item-width);
+    scroll-snap-align: start;
 
     & + & {
       border-left: 1px solid var(--c-border);

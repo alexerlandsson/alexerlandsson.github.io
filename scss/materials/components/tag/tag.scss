@@ -1,0 +1,8 @@
+@use "../../../helpers" as *;
+
+.tag {
+  padding: size(0.25) size(1);
+  font-size: scss-var(font, size, small);
+  color: var(--c-text-alt);
+  border: 1px solid var(--c-border);
+}
