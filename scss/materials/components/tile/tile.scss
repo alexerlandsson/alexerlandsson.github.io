@@ -47,6 +47,13 @@
     @include flex-wrap(wrap);
 
     gap: size(1);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__tag {
+    color: var(--c-text-alt);
   }
 
   &__icon {
