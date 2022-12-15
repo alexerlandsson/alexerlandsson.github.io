@@ -30,8 +30,8 @@
     max-width: var(--overflow-grid-item-width);
     scroll-snap-align: start;
 
-    & + & {
-      border-left: 1px solid var(--c-border);
+    &:not(:last-child) {
+      border-right: 1px solid var(--c-border);
     }
   }
 }
