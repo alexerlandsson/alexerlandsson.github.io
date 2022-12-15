@@ -1,0 +1,17 @@
+/// Base styling
+
+@use "../../helpers" as *;
+
+html {
+  font-size: 100%;
+}
+
+body {
+  @include font-regular;
+
+  background-color: var(--c-bg);
+  font-family: scss-var(font, family, main);
+  font-size: scss-var(font, size, regular);
+  line-height: scss-var(font, line-height, main);
+  color: var(--c-text-main);
+}

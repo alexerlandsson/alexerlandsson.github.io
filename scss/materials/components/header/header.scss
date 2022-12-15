@@ -1,0 +1,14 @@
+@use "../../../helpers" as *;
+
+.header {
+  padding: var(--main-gutter) var(--main-gutter) 0 var(--main-gutter);
+
+  &__heading {
+    width: max-content;
+    color: var(--c-text-alt);
+    letter-spacing: -.08em;
+    word-spacing: -0.25em;
+    text-transform: uppercase;
+    transform: rotate(180deg);
+  }
+}

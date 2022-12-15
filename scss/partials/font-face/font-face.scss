@@ -1,0 +1,17 @@
+@use "../../helpers" as *;
+
+$font-path: "../font/";
+
+@font-face {
+  font-family: "Manrope";
+  src: url("#{$font-path}Manrope-Regular.woff2") format("woff2");
+  font-weight: scss-var(font, weight, regular);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url("#{$font-path}Manrope-SemiBold.woff2") format("woff2");
+  font-weight: scss-var(font, weight, strong);
+  font-display: swap;
+}

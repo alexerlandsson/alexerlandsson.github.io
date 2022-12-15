@@ -1,0 +1,20 @@
+@use "sass:string";
+@use "../../../helpers" as *;
+
+.root {
+  &__body {
+    @include grid-display;
+    @include grid-template-columns(1fr 1fr);
+    @include grid-template-rows(auto);
+    gap: var(--main-gutter);
+  }
+
+  &__body-heading {
+    @include grid-column(string.unquote("1 / 2"));
+  }
+
+  &__body-content {
+    @include grid-column(string.unquote("2 / 3"));
+    max-width: min(600px, 40vw);
+  }
+}

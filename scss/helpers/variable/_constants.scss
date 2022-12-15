@@ -1,0 +1,67 @@
+/// Constants to use across the project
+/// Declare constants in the $constants map and fetch
+/// a constant using the const() function.
+
+@use "sass:list";
+@use "sass:map";
+
+// Positions
+$position-inline-x: left, center, right;
+$position-inline-y: top, middle, bottom;
+$position-inline-all: list.join($position-inline-x, $position-inline-y, $separator: comma);
+$position-block-x: left, right;
+$position-block-y: top, bottom;
+$position-block-all: list.join($position-block-x, $position-block-y, $separator: comma);
+
+// This map is used to declare constants
+$constants: (
+  position: (
+    inline: (
+      x: $position-inline-x,
+      y: $position-inline-y,
+      all: $position-inline-all,
+    ),
+    block: (
+      x: $position-block-x,
+      y: $position-block-y,
+      all: $position-block-all,
+    ),
+    flexbox: (
+      flex-start,
+      center,
+      flex-end,
+    ),
+  ),
+  position-type: (
+    relative,
+    absolute,
+    sticky,
+    fixed,
+    static,
+  ),
+  global-values: (
+    inherit,
+    initial,
+    revert,
+    unset,
+  ),
+  headings: (
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+  ),
+);
+
+// This function is used to use constants in the project
+@function const($keys...) {
+  $value: map.get($constants, $keys...);
+
+  @if not $value {
+    @error "Constant '#{$keys}' does not exist in $constants.";
+  }
+
+  @return $value;
+}

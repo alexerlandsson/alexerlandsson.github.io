@@ -1,0 +1,11 @@
+@use "../../../helpers" as *;
+
+.root {
+  $root: &;
+
+  &__body-heading {
+    & + #{$root}__body-content {
+      margin-top: size(2);
+    }
+  }
+}
