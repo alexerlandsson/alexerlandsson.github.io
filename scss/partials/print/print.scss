@@ -1,19 +1,27 @@
 /// Styling used in the print media query
 
-@page {
-  size: 330mm 427mm;
-  margin: 14mm;
+@use "../../helpers" as *;
+
+* {
+  &:not(html, body) {
+    display: none;
+  }
+}
+
+html,
+body {
+  height: 100%;
 }
 
 body {
-  font-size: 10pt;
+  @include flex-display;
+  @include align-items(center);
+  @include justify-content(center);
+  font-size: 12pt;
   background-color: #fff;
   color: #000;
-}
 
-// Print URL to links
-a[href] {
-  &::after {
-    content: " (" attr(href) ")";
+  &::before {
+    content: "Please don't print this page.";
   }
 }
