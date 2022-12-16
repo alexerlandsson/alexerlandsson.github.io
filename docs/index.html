@@ -40,6 +40,9 @@
     <meta name="twitter:site" content="@alexerlandsson" />
     <meta name="twitter:card" content="summary_large_image" />
 
+    <link rel="preload" href="./font/Manrope-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./font/Manrope-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+
     <link href="styles/styles.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
@@ -220,7 +223,7 @@
           </ul>
         </div>
       </section>
-      <section class="root__section" aria-label="Contact">
+      <section class="root__section root__section--lazy" aria-label="Contact">
         <div class="root__body">
           <div class="root__body-heading">
             <h2 class="heading heading--2 heading--no-margin">Contact</h2>

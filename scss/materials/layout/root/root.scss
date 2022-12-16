@@ -12,5 +12,9 @@
       @include justify-content(center);
       min-height: 70vh;
     }
+
+    &--lazy {
+      content-visibility: auto;
+    }
   }
 }
