@@ -2,16 +2,24 @@
 
 @use "../../helpers" as *;
 
+html,
+body {
+  min-height: 100vh;
+}
+
 html {
   font-size: 100%;
 }
 
 body {
+  @include flex-display;
+  @include flex-direction(column);
   @include font-regular;
 
   background-color: var(--c-bg);
   font-family: scss-var(font, family, main);
   font-size: scss-var(font, size, regular);
   line-height: scss-var(font, line-height, main);
+  letter-spacing: scss-var(font, letter-spacing, main);
   color: var(--c-text-main);
 }

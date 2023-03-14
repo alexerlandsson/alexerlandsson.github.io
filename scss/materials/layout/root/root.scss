@@ -1,16 +1,16 @@
 @use "../../../helpers" as *;
 
 .root {
-  padding: var(--main-gutter) 0;
+  padding: calc(var(--gutter-block) / 2) 0;
 
   &__section {
-    padding: var(--main-gutter);
+    padding: calc(var(--gutter-block) / 2) var(--gutter-inline);
 
     &--grow {
       @include flex-display;
       @include flex-direction(column);
       @include justify-content(center);
-      min-height: 70vh;
+      min-height: 60vh;
     }
 
     &--lazy {

@@ -1,0 +1,6 @@
+@use "../../helpers" as *;
+
+:root {
+  --gutter-block: #{size(9)};
+  --gutter-inline: #{size(8)};
+}

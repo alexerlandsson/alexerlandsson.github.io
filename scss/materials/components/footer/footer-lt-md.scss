@@ -1,0 +1,4 @@
+.footer {
+  grid-template-rows: auto auto;
+  gap: calc(var(--gutter-block) / 4);
+}

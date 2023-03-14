@@ -1,17 +1,23 @@
 @use "../../../helpers" as *;
 
 .heading {
-  @include font-bold;
+  $root: &;
 
-  &:not(&--no-margin) {
-    margin-bottom: var(--main-gutter);
-  }
+  @include font-bold;
 
   &--2 {
     font-size: 2rem;
+
+    &:not(#{$root}--no-margin) {
+      margin-bottom: calc(var(--gutter-block) / 2);
+    }
   }
 
   &--3 {
     font-size: 1.5rem;
+
+    &:not(#{$root}--no-margin) {
+      margin-bottom: calc(var(--gutter-block) / 3);
+    }
   }
 }
