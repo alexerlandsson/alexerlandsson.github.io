@@ -9,6 +9,7 @@
 
   &__list {
     @include flex-display;
+
     list-style: none;
     padding: 0 var(--gutter-inline);
     margin: 0;
@@ -27,6 +28,7 @@
 
   &__item {
     @include flex(1 0 auto);
+
     width: var(--overflow-grid-item-width);
     max-width: var(--overflow-grid-item-width);
     scroll-snap-align: start;

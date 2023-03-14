@@ -8,8 +8,8 @@
   isolation: isolate;
 
   &::before {
-    //@include transform(scalex(0));
     @include transform-origin(50% 100%);
+
     content: '';
     position: absolute;
     bottom: 5%;
@@ -42,7 +42,6 @@
     @media (any-hover: hover) and (any-pointer: fine) {
       &:hover {
         &::before {
-          //@include transform-origin(0 50%);
           @include transform(scaleY(200%));
         }
       }

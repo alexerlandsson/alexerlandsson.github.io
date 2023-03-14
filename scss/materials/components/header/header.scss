@@ -7,10 +7,10 @@
   padding: var(--header-gutter-block) var(--header-gutter-inline) 0 var(--header-gutter-inline);
 
   &__heading {
-    @include font-bold;
-
     font-size: 1.25rem;
     line-height: 1;
     color: var(--c-text-alt);
+    text-transform: lowercase;
+    word-spacing: -0.25em;
   }
 }

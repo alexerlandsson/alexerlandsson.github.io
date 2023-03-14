@@ -1,6 +1,8 @@
 @use "../../../helpers" as *;
 
 .tile {
+  $root: &;
+
   --tile-spacing-block: #{size(5)};
   --tile-spacing-inline: #{size(4)};
 
@@ -13,14 +15,6 @@
   background-color: var(--c-primary);
   border-radius: size(3);
   isolation: isolate;
-
-  &:has(&__link) {
-    &:hover {
-      .icon {
-        @include transform(scale(2));
-      }
-    }
-  }
 
   &__link {
     text-decoration: none;
@@ -56,6 +50,10 @@
       @include transform-origin(0 100%);
 
       transition: transform 200ms ease;
+
+      #{$root}:has(#{$root}__link):hover & {
+        @include transform(scale(2));
+      }
     }
   }
 }

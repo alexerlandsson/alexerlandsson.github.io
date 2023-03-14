@@ -2,10 +2,17 @@
 @use "../../../helpers" as *;
 
 .root {
+  &__section {
+    &--grow {
+      min-height: 60vh;
+    }
+  }
+
   &__body {
     @include grid-display;
     @include grid-template-columns(1fr 1fr);
     @include grid-template-rows(auto);
+
     gap: var(--gutter-inline);
   }
 
@@ -15,6 +22,7 @@
 
   &__body-content {
     @include grid-column(string.unquote("2 / 3"));
+
     max-width: min(600px, 40vw);
   }
 }

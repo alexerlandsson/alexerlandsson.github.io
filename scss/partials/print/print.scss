@@ -17,6 +17,7 @@ body {
   @include flex-display;
   @include align-items(center);
   @include justify-content(center);
+
   font-size: 12pt;
   background-color: #fff;
   color: #000;
