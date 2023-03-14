@@ -46,11 +46,11 @@
     <link href="styles/styles.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <header class="header">
+    <header class="header" data-animation="header">
       <h1 class="header__heading">Alex Erlandsson</h1>
     </header>
     <main class="root">
-      <section class="root__section root__section--grow" aria-label="About">
+      <section class="root__section root__section--grow" aria-label="About" data-animation="about">
         <div class="root__body">
           <div class="root__body-content">
             <div class="content">
@@ -72,8 +72,8 @@
         </div>
       </section>
       <section class="root__section" aria-label="Work">
-        <h2 class="heading heading--2">Work</h2>
-        <div class="overflow-grid">
+        <h2 class="heading heading--2" data-animation="work-heading">Work</h2>
+        <div class="overflow-grid" data-animation="work-grid">
           <ul class="overflow-grid__list">
             <li class="overflow-grid__item">
               <div class="tile">
@@ -224,7 +224,7 @@
         </div>
       </section>
     </main>
-    <footer class="footer" aria-label="Contact">
+    <footer class="footer" aria-label="Contact" data-animation="footer">
       <div class="footer__heading">
         <h2 class="heading heading--2 heading--no-margin">Contact</h2>
       </div>

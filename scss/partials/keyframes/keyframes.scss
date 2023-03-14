@@ -1,6 +1,5 @@
 /// Global keyframes to use in multiple materials
 
-/*
 @keyframes no-transform {
   100% {
     transform: none;
@@ -17,6 +16,7 @@
   }
 }
 
+/*
 @keyframes rotate {
   100% {
     transform: rotate(360deg);
