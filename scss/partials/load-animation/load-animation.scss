@@ -3,6 +3,7 @@
 @use "../../helpers" as *;
 
 $animation-duration: 400ms;
+$animation-timing-function: ease;
 $delay-header: 1200ms;
 $delay-footer: 1200ms;
 $delay-work-heading: 400ms;
@@ -12,7 +13,7 @@ $delay-work-grid-item: 120ms;
 // Header
 [data-animation="header"] {
   @include transform(translateX(size(-3)));
-  @include animation(no-transform $animation-duration ease forwards $delay-header, fade-in $animation-duration ease forwards $delay-header);
+  @include animation(no-transform $animation-duration $animation-timing-function forwards $delay-header, fade-in $animation-duration $animation-timing-function forwards $delay-header);
 
   opacity: 0;
 }
@@ -20,13 +21,13 @@ $delay-work-grid-item: 120ms;
 // Section: About
 [data-animation="about"] {
   @include transform(translateY(25%));
-  @include animation(no-transform $animation-duration ease forwards, fade-in $animation-duration ease);
+  @include animation(no-transform $animation-duration $animation-timing-function forwards, fade-in $animation-duration $animation-timing-function);
 }
 
 // Section: Work (heading)
 [data-animation="work-heading"] {
   @include transform(translateY(size(3)));
-  @include animation(no-transform $animation-duration ease forwards $delay-work-heading, fade-in $animation-duration ease forwards $delay-work-heading);
+  @include animation(no-transform $animation-duration $animation-timing-function forwards $delay-work-heading, fade-in $animation-duration $animation-timing-function forwards $delay-work-heading);
 
   opacity: 0;
 }
@@ -39,7 +40,7 @@ $delay-work-grid-item: 120ms;
     &__item {
       .tile {
         @include transform(translateX(size(3)));
-        @include animation(no-transform $animation-duration ease forwards, fade-in $animation-duration ease forwards);
+        @include animation(no-transform $animation-duration $animation-timing-function forwards, fade-in $animation-duration $animation-timing-function forwards);
 
         opacity: 0;
       }
@@ -57,7 +58,7 @@ $delay-work-grid-item: 120ms;
 
 // Footer
 [data-animation="footer"] {
-  @include animation(fade-in $animation-duration ease forwards $delay-footer);
+  @include animation(fade-in $animation-duration $animation-timing-function forwards $delay-footer);
 
   opacity: 0;
 }
