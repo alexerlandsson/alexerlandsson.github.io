@@ -1,12 +1,16 @@
 @use "../../../helpers" as *;
 
 .header {
-  padding: var(--main-gutter) var(--main-gutter) 0 var(--main-gutter);
+  --header-gutter-block: calc(var(--gutter-block) / 2);
+  --header-gutter-inline: var(--gutter-inline);
+
+  padding: var(--header-gutter-block) var(--header-gutter-inline) 0 var(--header-gutter-inline);
 
   &__heading {
-    width: max-content;
+    @include font-bold;
+
+    font-size: 1.25rem;
+    line-height: 1;
     color: var(--c-text-alt);
-    text-transform: uppercase;
-    transform: rotate(180deg);
   }
 }

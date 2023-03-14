@@ -1,20 +1,21 @@
 @use "../../../helpers" as *;
 
 .overflow-grid {
-  --overflow-grid-item-width: 80%;
+  --number-of-items: 1;
+  --item-spacing: calc(var(--gutter-inline) / 2);
+  --overflow-grid-item-width: calc( (100% / var(--number-of-items)) - ((var(--item-spacing) * (var(--number-of-items) - 1)) / var(--number-of-items)));
 
-  margin: 0 calc(var(--main-gutter) * -1);
+  margin: 0 calc(var(--gutter-inline) * -1);
 
   &__list {
     @include flex-display;
     list-style: none;
-    padding: 0;
+    padding: 0 var(--gutter-inline);
     margin: 0;
-    border-top: 1px solid var(--c-border);
-    border-bottom: 1px solid var(--c-border);
     overflow: auto;
     scroll-snap-type: x mandatory;
-    scroll-padding-left: 0;
+    scroll-padding-left: var(--gutter-inline);
+    scroll-padding-right: var(--gutter-inline);
     overscroll-behavior-x: none;
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -30,8 +31,8 @@
     max-width: var(--overflow-grid-item-width);
     scroll-snap-align: start;
 
-    &:not(:last-child) {
-      border-right: 1px solid var(--c-border);
+    & + & {
+      margin-left: calc(var(--gutter-inline) / 2);
     }
   }
 }

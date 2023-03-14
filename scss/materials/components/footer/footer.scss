@@ -1,0 +1,12 @@
+@use "../../../helpers" as *;
+
+.footer {
+  --link-overlay-color: var(--c-footer-accent);
+
+  display: grid;
+  padding: var(--gutter-block) var(--gutter-inline);
+  margin-top: auto;
+  background-color: var(--c-footer-bg);
+  color: var(--c-footer-fg);
+  content-visibility: auto;
+}

@@ -1,0 +1,10 @@
+@use "../../../helpers" as *;
+
+.tile {
+  --tile-spacing-block: #{size(7)};
+  --tile-spacing-inline: #{size(5)};
+
+  &__tag {
+    font-size: 1.125rem;
+  }
+}

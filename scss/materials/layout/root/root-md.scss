@@ -6,7 +6,7 @@
     @include grid-display;
     @include grid-template-columns(1fr 1fr);
     @include grid-template-rows(auto);
-    gap: var(--main-gutter);
+    gap: var(--gutter-inline);
   }
 
   &__body-heading {

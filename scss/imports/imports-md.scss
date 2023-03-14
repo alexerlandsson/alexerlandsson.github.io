@@ -1,8 +1,13 @@
 /// Import files using @use for styling in the breakpoint 'md'
 
+// Partials
+@use "../partials/custom-properties/custom-properties-md";
+
 // Components
 @use "../materials/components/content/content-md";
+@use "../materials/components/footer/footer-md";
 @use "../materials/components/overflow-grid/overflow-grid-md";
+@use "../materials/components/tile/tile-md";
 
 // Layout
 @use "../materials/layout/root/root-md";

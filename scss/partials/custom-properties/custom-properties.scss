@@ -1,19 +1,23 @@
 @use "../../helpers" as *;
 
 :root {
-  --main-gutter: #{size(3)};
+  --gutter-block: #{size(8)};
+  --gutter-inline: #{size(4)};
 
-  --c-bg: #fff;
-  --c-bg-tone: #f5f5f5;
-  --c-text-main: #141414;
-  --c-text-alt: #595959;
-  --c-border: #e1e1e1;
+  --c-bg: #fafafa;
+  --c-text-main: #191919;
+  --c-text-alt: #463e2f;
+  --c-link: #ded3bf;
+  --c-primary: #ded3bf;
+  --c-footer-bg: #191919;
+  --c-footer-fg: #fff;
+  --c-footer-accent: #2a2a2a;
 
   @media (prefers-color-scheme: dark) {
     --c-bg: #141414;
-    --c-bg-tone: #111;
-    --c-text-main: #fff;
+    --c-text-main: #fafafa;
     --c-text-alt: #a0a0a0;
-    --c-border: #2d2d2d;
+    --c-link: #2a2a2a;
+    --c-primary: #191919;
   }
 }
