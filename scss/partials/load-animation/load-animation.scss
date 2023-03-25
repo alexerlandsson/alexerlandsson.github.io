@@ -34,7 +34,7 @@ $delay-work-grid-item: 120ms;
 
 // Section: Work (grid)
 [data-animation="work-grid"] {
-  $max-amount-of-items: 4;
+  $max-amount-of-items: 5;
 
   .overflow-grid {
     &__item {

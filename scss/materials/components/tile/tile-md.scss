@@ -1,7 +1,7 @@
 @use "../../../helpers" as *;
 
 .tile {
-  --tile-spacing-block: #{size(7)};
+  --tile-spacing-block: #{size(6)};
   --tile-spacing-inline: #{size(5)};
 
   &__tag {
