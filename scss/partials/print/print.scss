@@ -2,7 +2,7 @@
 
 @use "../../helpers" as *;
 
-* {
+:is(*, #important) {
   &:not(html, body) {
     display: none;
   }

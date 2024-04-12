@@ -2,63 +2,65 @@
 
 @use "../../helpers" as *;
 
-$animation-duration: 400ms;
-$animation-timing-function: ease;
-$delay-header: 1200ms;
-$delay-footer: 1200ms;
-$delay-work-heading: 400ms;
-$delay-work-grid: 500ms;
-$delay-work-grid-item: 120ms;
+@media not (prefers-reduced-motion) {
+  $animation-duration: 400ms;
+  $animation-timing-function: ease;
+  $delay-header: 1200ms;
+  $delay-footer: 1200ms;
+  $delay-work-heading: 400ms;
+  $delay-work-grid: 500ms;
+  $delay-work-grid-item: 120ms;
 
-// Header
-[data-animation="header"] {
-  @include transform(translateX(size(-3)));
-  @include animation(no-transform $animation-duration $animation-timing-function forwards $delay-header, fade-in $animation-duration $animation-timing-function forwards $delay-header);
+  // Header
+  [data-animation="header"] {
+    @include transform(translateX(size(-3)));
+    @include animation(no-transform $animation-duration $animation-timing-function forwards $delay-header, fade-in $animation-duration $animation-timing-function forwards $delay-header);
 
-  opacity: 0;
-}
+    opacity: 0;
+  }
 
-// Section: About
-[data-animation="about"] {
-  @include transform(translateY(25%));
-  @include animation(no-transform $animation-duration $animation-timing-function forwards, fade-in $animation-duration $animation-timing-function);
-}
+  // Section: About
+  [data-animation="about"] {
+    @include transform(translateY(25%));
+    @include animation(no-transform $animation-duration $animation-timing-function forwards, fade-in $animation-duration $animation-timing-function);
+  }
 
-// Section: Work (heading)
-[data-animation="work-heading"] {
-  @include transform(translateY(size(3)));
-  @include animation(no-transform $animation-duration $animation-timing-function forwards $delay-work-heading, fade-in $animation-duration $animation-timing-function forwards $delay-work-heading);
+  // Section: Work (heading)
+  [data-animation="work-heading"] {
+    @include transform(translateY(size(3)));
+    @include animation(no-transform $animation-duration $animation-timing-function forwards $delay-work-heading, fade-in $animation-duration $animation-timing-function forwards $delay-work-heading);
 
-  opacity: 0;
-}
+    opacity: 0;
+  }
 
-// Section: Work (grid)
-[data-animation="work-grid"] {
-  $max-amount-of-items: 5;
+  // Section: Work (grid)
+  [data-animation="work-grid"] {
+    $max-amount-of-items: 5;
 
-  .overflow-grid {
-    &__item {
-      .tile {
-        @include transform(translateX(size(3)));
-        @include animation(no-transform $animation-duration $animation-timing-function forwards, fade-in $animation-duration $animation-timing-function forwards);
+    .overflow-grid {
+      &__item {
+        .tile {
+          @include transform(translateX(size(3)));
+          @include animation(no-transform $animation-duration $animation-timing-function forwards, fade-in $animation-duration $animation-timing-function forwards);
 
-        opacity: 0;
-      }
+          opacity: 0;
+        }
 
-      @for $i from 1 through $max-amount-of-items {
-        &:nth-child(#{$i}) {
-          .tile {
-            @include animation-delay($delay-work-grid + $delay-work-grid-item * $i);
+        @for $i from 1 through $max-amount-of-items {
+          &:nth-child(#{$i}) {
+            .tile {
+              @include animation-delay($delay-work-grid + $delay-work-grid-item * $i);
+            }
           }
         }
       }
     }
   }
-}
 
-// Footer
-[data-animation="footer"] {
-  @include animation(fade-in $animation-duration $animation-timing-function forwards $delay-footer);
+  // Footer
+  [data-animation="footer"] {
+    @include animation(fade-in $animation-duration $animation-timing-function forwards $delay-footer);
 
-  opacity: 0;
+    opacity: 0;
+  }
 }
