@@ -8,6 +8,7 @@
       }
     ],
     "color-function-notation": "legacy",
-    "alpha-value-notation": "number"
+    "alpha-value-notation": "number",
+    "scss/load-no-partial-leading-underscore": null
   }
 }
